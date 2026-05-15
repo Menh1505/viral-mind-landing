@@ -4,6 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import ScrambleText from "./ScrambleText";
 import MagneticButton from "./MagneticButton";
+import LazyVideo from "./LazyVideo";
 
 const TABS = ["OVERVIEW", "CONTENT", "SOCIAL", "EMAIL", "SEO"];
 
@@ -187,13 +188,9 @@ const TAB_CONTENT: Record<string, React.ReactNode> = {
       ].map((item) => (
         <div key={item.title} className="bg-[#05050a] rounded-lg border border-[#1a1a2e] overflow-hidden">
           <div className="relative w-full" style={{ paddingBottom: "33%" }}>
-            <video
+            <LazyVideo
               src={item.video}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              className="object-cover"
               style={{ filter: "brightness(0.7) saturate(1.2)" }}
             />
             <div
@@ -497,17 +494,11 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist?: () => void }
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
-        <source src="/videos/hero-bg.webm" type="video/webm" />
-      </video>
+      <LazyVideo
+        eager
+        src="/videos/hero-bg.mp4"
+        wrapperStyle={{ zIndex: 0 }}
+      />
 
       <div
         className="absolute inset-0"

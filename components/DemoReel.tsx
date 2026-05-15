@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import LazyVideo from "./LazyVideo";
 
 const SCENES = [
   {
@@ -159,18 +160,10 @@ export default function DemoReel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [videoIndex, setVideoIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const ref = useRef<HTMLDivElement>(null);
 
   const prevVideo = () => setVideoIndex((i) => (i - 1 + VIDEOS.length) % VIDEOS.length);
   const nextVideo = () => setVideoIndex((i) => (i + 1) % VIDEOS.length);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      void videoRef.current.play();
-    }
-  }, [videoIndex]);
 
   useEffect(() => {
     if (paused) return;
@@ -310,16 +303,7 @@ export default function DemoReel() {
               className="relative w-full"
               style={{ paddingBottom: "56.25%" }}
             >
-              <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src={VIDEOS[videoIndex]} type="video/mp4" />
-              </video>
+              <LazyVideo src={VIDEOS[videoIndex]} rootMargin="400px" />
 
               <button
                 onClick={prevVideo}
