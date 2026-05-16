@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Nav({ onOpenWaitlist }: { onOpenWaitlist?: () => void }) {
+export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -57,18 +57,18 @@ export default function Nav({ onOpenWaitlist }: { onOpenWaitlist?: () => void })
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#signup"
+            href="https://app.viral-mind.online"
             className="text-sm text-[#6b7280] hover:text-white transition-colors px-4 py-2"
           >
             Sign in
           </a>
-          <button
-            onClick={onOpenWaitlist}
+          <a
+            href="https://app.viral-mind.online"
             className="gradient-border text-sm font-medium px-5 py-2 rounded-lg text-white hover:opacity-90 transition-opacity"
             style={{ background: "linear-gradient(135deg, #7c3aed, #06b6d4)" }}
           >
             START FREE
-          </button>
+          </a>
         </div>
 
         <button
@@ -98,13 +98,14 @@ export default function Nav({ onOpenWaitlist }: { onOpenWaitlist?: () => void })
                 {item.toUpperCase()}
               </a>
             ))}
-            <button
-              className="text-sm font-semibold text-center py-3 rounded-lg text-white"
+            <a
+              href="https://app.viral-mind.online"
+              className="text-sm font-semibold text-center py-3 rounded-lg text-white block"
               style={{ background: "linear-gradient(135deg, #7c3aed, #06b6d4)" }}
-              onClick={() => { setOpen(false); onOpenWaitlist?.(); }}
+              onClick={() => setOpen(false)}
             >
               START FREE TRIAL
-            </button>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

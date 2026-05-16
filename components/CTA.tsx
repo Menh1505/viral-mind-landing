@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
-export default function CTA({ onOpenWaitlist }: { onOpenWaitlist?: () => void }) {
+export default function CTA() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -58,8 +58,8 @@ export default function CTA({ onOpenWaitlist }: { onOpenWaitlist?: () => void })
         </p>
 
         <div className="fade-up flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <button
-            onClick={onOpenWaitlist}
+          <a
+            href="https://app.viral-mind.online"
             className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-sm mono tracking-widest transition-all hover:scale-105 hover:shadow-lg"
             style={{
               background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
@@ -68,7 +68,7 @@ export default function CTA({ onOpenWaitlist }: { onOpenWaitlist?: () => void })
           >
             LAUNCH YOUR AGENTS — FREE
             <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         <div className="fade-up mono text-xs text-[#3a3a4a] tracking-widest">

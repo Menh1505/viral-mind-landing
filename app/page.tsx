@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
@@ -13,27 +12,23 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";
 import ScrollProgress from "@/components/ScrollProgress";
-import WaitlistModal from "@/components/WaitlistModal";
 
 export default function Home() {
-  const [waitlistOpen, setWaitlistOpen] = useState(false);
-
   return (
     <>
       <CursorGlow />
       <ScrollProgress />
-      <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
       <main>
-        <Nav onOpenWaitlist={() => setWaitlistOpen(true)} />
-        <Hero onOpenWaitlist={() => setWaitlistOpen(true)} />
+        <Nav />
+        <Hero />
         <Ticker />
         <Pain />
         <Agents />
         <DemoReel />
         <HowItWorks />
-        <Pricing onOpenWaitlist={() => setWaitlistOpen(true)} />
+        <Pricing />
         <FAQ />
-        <CTA onOpenWaitlist={() => setWaitlistOpen(true)} />
+        <CTA />
         <Footer />
       </main>
     </>

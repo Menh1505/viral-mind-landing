@@ -53,7 +53,7 @@ const PLANS = [
 
 type Plan = (typeof PLANS)[number];
 
-function PricingCard({ plan, annual, onOpenWaitlist }: { plan: Plan; annual: boolean; onOpenWaitlist: () => void }) {
+function PricingCard({ plan, annual }: { plan: Plan; annual: boolean }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [spotlight, setSpotlight] = useState({ x: 0, y: 0, visible: false });
 
@@ -113,9 +113,9 @@ function PricingCard({ plan, annual, onOpenWaitlist }: { plan: Plan; annual: boo
           ))}
         </ul>
 
-        <button
-          onClick={onOpenWaitlist}
-          className={`w-full text-center py-3.5 rounded-xl font-semibold text-sm mono tracking-widest transition-all ${
+        <a
+          href="https://app.viral-mind.online"
+          className={`w-full text-center py-3.5 rounded-xl font-semibold text-sm mono tracking-widest transition-all block ${
             plan.highlight
               ? "text-white hover:opacity-90"
               : "border border-[#1a1a2e] text-[#6b7280] hover:text-white hover:border-violet-500"
@@ -127,13 +127,13 @@ function PricingCard({ plan, annual, onOpenWaitlist }: { plan: Plan; annual: boo
           }
         >
           {plan.cta.toUpperCase()}
-        </button>
+        </a>
       </div>
     </div>
   );
 }
 
-export default function Pricing({ onOpenWaitlist }: { onOpenWaitlist?: () => void }) {
+export default function Pricing() {
   const [annual, setAnnual] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -189,7 +189,6 @@ export default function Pricing({ onOpenWaitlist }: { onOpenWaitlist?: () => voi
             key={plan.name}
             plan={plan}
             annual={annual}
-            onOpenWaitlist={onOpenWaitlist ?? (() => {})}
           />
         ))}
       </div>

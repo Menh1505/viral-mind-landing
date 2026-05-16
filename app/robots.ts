@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://viralmind.ai/sitemap.xml",
+    sitemap: "https://viral-mind.online/sitemap.xml",
   };
 }

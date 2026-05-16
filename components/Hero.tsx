@@ -381,7 +381,7 @@ const TAB_CONTENT: Record<string, React.ReactNode> = {
       <div className="bg-[#05050a] rounded-xl border border-[#1a1a2e] overflow-hidden">
         <div className="px-3 py-2 border-b border-[#1a1a2e] flex items-center justify-between">
           <div className="mono text-[8px] text-[#3a3a4a] tracking-widest">FROM</div>
-          <div className="mono text-[9px] text-[#6b7280]">agents@viralmind.ai</div>
+          <div className="mono text-[9px] text-[#6b7280]">agents@viral-mind.online</div>
         </div>
         <div className="px-3 py-2 border-b border-[#1a1a2e] flex items-center justify-between">
           <div className="mono text-[8px] text-[#3a3a4a] tracking-widest">TO</div>
@@ -484,7 +484,7 @@ const TAB_CONTENT: Record<string, React.ReactNode> = {
   ),
 };
 
-export default function Hero({ onOpenWaitlist }: { onOpenWaitlist?: () => void }) {
+export default function Hero() {
   const [activeTab, setActiveTab] = useState("OVERVIEW");
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
@@ -566,8 +566,7 @@ export default function Hero({ onOpenWaitlist }: { onOpenWaitlist?: () => void }
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <MagneticButton
-              href="#"
-              onClick={(e: React.MouseEvent) => { e.preventDefault(); onOpenWaitlist?.(); }}
+              href="https://app.viral-mind.online"
               className="flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-white text-sm"
               style={{ background: "linear-gradient(135deg, #7c3aed, #06b6d4)" }}
             >

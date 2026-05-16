@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Viral Mind" }],
   creator: "Viral Mind",
   publisher: "Viral Mind",
-  metadataBase: new URL("https://viralmind.ai"),
+  metadataBase: new URL("https://viral-mind.online"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://viralmind.ai",
+    url: "https://viral-mind.online",
     siteName: "Viral Mind",
     title: "Viral Mind — AI Marketing Team, On Autopilot",
     description:
@@ -94,7 +94,7 @@ export default function RootLayout({
                 { "@type": "Offer", price: "149", priceCurrency: "USD", name: "Growth" },
                 { "@type": "Offer", price: "399", priceCurrency: "USD", name: "Agency" },
               ],
-              url: "https://viralmind.ai",
+              url: "https://viral-mind.online",
             }),
           }}
         />
