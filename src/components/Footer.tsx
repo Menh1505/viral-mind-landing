@@ -7,7 +7,7 @@ const footerLinks = {
     { label: "ViralMinds", href: "#what-is" },
     { label: "Giải pháp", href: "#solutions" },
     { label: "Cách hoạt động", href: "#how-it-works" },
-    { label: "Demo", href: "#demo" },
+    { label: "Đặt lịch tư vấn", href: "#contact" },
   ],
   resources: [
     { label: "Thiết kế Workforce", href: "#design" },

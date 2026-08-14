@@ -3,11 +3,8 @@ import { Menu, X, ArrowRight, MessageSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Tổng quan", href: "#overview" },
-  { label: "ViralMinds", href: "#what-is" },
-  { label: "Giải pháp", href: "#solutions" },
+  { label: "Đội ngũ AI", href: "#capabilities" },
   { label: "Cách hoạt động", href: "#how-it-works" },
-  { label: "Demo", href: "#demo" },
   { label: "Chi phí", href: "#pricing" },
 ];
 
@@ -56,7 +53,7 @@ export default function Header() {
               <span className="hidden xl:inline">Zalo 0374 149 427</span>
             </a>
             <a href="#contact" className="btn-primary">
-              <span>Đăng ký tư vấn</span>
+              <span>Đặt lịch tư vấn</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
@@ -101,7 +98,7 @@ export default function Header() {
                 <span>Zalo 0374 149 427</span>
               </a>
               <a href="#contact" className="btn-primary w-full justify-center" onClick={() => setIsOpen(false)}>
-                <span>Đăng ký tư vấn</span>
+                <span>Đặt lịch tư vấn</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>

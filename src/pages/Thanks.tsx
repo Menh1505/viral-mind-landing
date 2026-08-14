@@ -37,7 +37,7 @@ export default function Thanks() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          Chúng tôi đã nhận thông tin và sẽ liên hệ lại trong vòng 24h để sắp xếp buổi tư vấn/demo phù hợp với doanh nghiệp của bạn.
+          Chúng tôi đã nhận thông tin và sẽ liên hệ lại để sắp xếp lịch tư vấn phù hợp với doanh nghiệp của bạn.
         </motion.p>
 
         <motion.div

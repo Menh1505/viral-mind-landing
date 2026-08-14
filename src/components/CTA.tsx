@@ -5,8 +5,7 @@ import { useState } from "react";
 const formFields = [
   { name: "name", label: "Họ và tên", type: "text", placeholder: "Nguyễn Văn A", required: true },
   { name: "company", label: "Tên doanh nghiệp", type: "text", placeholder: "Công ty TNHH ABC", required: true },
-  { name: "industry", label: "Ngành / lĩnh vực kinh doanh", type: "text", placeholder: "F&B / Spa / Shop / DTC / Khác", required: true },
-  { name: "channels", label: "Kênh đang sử dụng", type: "text", placeholder: "Facebook, TikTok, Zalo, Website...", required: false },
+  { name: "industry", label: "Ngành kinh doanh", type: "text", placeholder: "F&B / Spa / DTC / Khác", required: true },
 ];
 
 const painOptions = [
@@ -26,7 +25,6 @@ export default function CTA() {
     name: "",
     company: "",
     industry: "",
-    channels: "",
     mainPain: "",
     goal: "",
   });
@@ -75,7 +73,7 @@ export default function CTA() {
             </div>
             <h2 className="font-display heading-lg text-viral-text mb-4">Cảm ơn bạn đã đăng ký!</h2>
             <p className="font-body body-lg text-viral-text-muted mb-8">
-              Chúng tôi đã nhận thông tin và sẽ liên hệ lại trong vòng 24h để sắp xếp buổi tư vấn/demo phù hợp.
+              Chúng tôi đã nhận thông tin và sẽ liên hệ lại để sắp xếp lịch tư vấn phù hợp.
             </p>
             <a href="#" onClick={() => setSubmitted(false)} className="btn-primary inline-flex">
               <span>Quay lại trang chủ</span>
@@ -94,10 +92,10 @@ export default function CTA() {
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <span className="section-label">CTA cuối</span>
-          <h2 className="section-title">Marketing của bạn đang mất nhiều thời gian nhất ở đâu?</h2>
+          <span className="section-label">Bắt đầu từ một vấn đề cụ thể</span>
+          <h2 className="section-title">Việc nào trong Marketing đang làm bạn mất thời gian nhất?</h2>
           <p className="section-subtitle mt-4">
-            Hãy chia sẻ vấn đề doanh nghiệp đang gặp phải. ViralMinds sẽ cùng bạn xác định những công việc có thể ứng dụng AI và đề xuất cách xây dựng AI Workforce phù hợp.
+            Chia sẻ mục tiêu hoặc vấn đề doanh nghiệp đang gặp phải. ViralMinds sẽ cùng bạn xác định hướng xây dựng AI Workforce phù hợp.
           </p>
         </div>
 
@@ -105,7 +103,7 @@ export default function CTA() {
           <form onSubmit={handleSubmit} className="glass-panel rounded-card-xl p-6 md:p-8 space-y-6" noValidate>
             <div className="grid md:grid-cols-2 gap-6">
               {formFields.map((field) => (
-                <div key={field.name} className={field.name === "channels" ? "md:col-span-2" : ""}>
+                <div key={field.name}>
                   <label htmlFor={field.name} className="block font-mono label-sm text-viral-text-muted mb-2">
                     {field.label} {field.required && <span className="text-viral-alert" aria-hidden="true">*</span>}
                   </label>
@@ -128,21 +126,21 @@ export default function CTA() {
             </div>
 
             <div>
-              <label className="block font-mono label-sm text-viral-text-muted mb-2">
+              <label className="block font-mono label-sm text-viral-text-muted mb-3">
                 Vấn đề doanh nghiệp đang gặp phải <span className="text-viral-alert" aria-hidden="true">*</span>
               </label>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="flex flex-wrap gap-2">
                 {painOptions.map((pain) => (
-                  <label key={pain} className="flex items-center gap-2 cursor-pointer group">
+                  <label key={pain} className={`cursor-pointer rounded-full border px-4 py-2 transition-all ${formData.mainPain === pain ? 'border-viral-accent bg-viral-accent/15 text-viral-text' : 'border-viral-border text-viral-text-muted hover:border-viral-border-hover'}`}>
                     <input
                       type="radio"
                       name="mainPain"
                       value={pain}
                       checked={formData.mainPain === pain}
                       onChange={handleChange}
-                      className="w-4 h-4 rounded border-viral-border bg-viral-bg text-viral-accent focus:ring-2 focus:ring-viral-accent/20 accent-viral-accent"
+                      className="sr-only"
                     />
-                    <span className="font-body body-sm text-viral-text-muted group-hover:text-viral-text transition-colors">{pain}</span>
+                    <span className="font-body body-sm">{pain}</span>
                   </label>
                 ))}
               </div>
@@ -158,7 +156,7 @@ export default function CTA() {
                 name="goal"
                 value={formData.goal}
                 onChange={handleChange}
-                placeholder="Ví dụ: Muốn tăng 30% lead trong 3 tháng, tự động hóa quy trình content..."
+                placeholder="Ví dụ: tăng lead, giảm thời gian làm content..."
                 rows={3}
                 className={`w-full px-4 py-3 rounded-card-md bg-viral-bg/50 border ${errors.goal ? 'border-viral-alert' : 'border-viral-border'} focus:border-viral-accent focus:ring-2 focus:ring-viral-accent/20 focus:bg-viral-bg transition-all duration-fast font-body body-md text-viral-text placeholder-viral-text-subtle resize-none`}
                 aria-invalid={errors.goal ? "true" : "false"}
@@ -167,7 +165,7 @@ export default function CTA() {
             </div>
 
             <button type="submit" className="btn-primary w-full md:w-auto group">
-              <span>Đăng ký tư vấn / Demo</span>
+              <span>Đặt lịch tư vấn</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
