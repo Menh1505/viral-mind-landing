@@ -51,9 +51,9 @@ export default function Footer() {
                 <MessageSquare className="w-4 h-4" aria-hidden="true" />
                 <span>Zalo 0374 149 427</span>
               </a>
-              <a href="mailto:contact@viralminds.vn" className="flex items-center gap-2 px-3 py-2 bg-viral-bg-tertiary border border-viral-border rounded-card-md text-viral-text-muted hover:text-viral-accent hover:border-viral-accent/50 transition-all duration-fast font-body body-sm">
+              <a href="mailto:viralminds.admin@gmail.com" className="flex items-center gap-2 px-3 py-2 bg-viral-bg-tertiary border border-viral-border rounded-card-md text-viral-text-muted hover:text-viral-accent hover:border-viral-accent/50 transition-all duration-fast font-body body-sm">
                 <Mail className="w-4 h-4" aria-hidden="true" />
-                <span>contact@viralminds.vn</span>
+                <span>viralminds.admin@gmail.com</span>
               </a>
             </div>
           </motion.div>
