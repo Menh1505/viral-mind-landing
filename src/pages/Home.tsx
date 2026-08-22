@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import GrowthLens from "@/components/GrowthLens";
 
 const capabilities = [
   {
@@ -65,18 +66,45 @@ export default function Home() {
   return <div className="min-h-screen bg-viral-bg text-viral-text font-body">
     <Header />
     <main id="main-content">
-      <section id="overview" className="relative min-h-screen overflow-hidden pt-28 pb-20 flex items-center">
-        <div className="absolute inset-0 aurora-bg grid-bg opacity-90" aria-hidden="true" />
-        <div className="tech-orbit tech-orbit-one" aria-hidden="true" /><div className="tech-orbit tech-orbit-two" aria-hidden="true" />
-        <div className="container relative z-10 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}>
-            <span className="section-label"><Sparkles className="w-3.5 h-3.5 mr-2" />AI Workforce cho Digital Marketing</span>
-            <h1 className="font-display text-display-xl mt-5 mb-6">Agent phối hợp vận hành quy trình <span className="text-gradient-accent">Digital Marketing dành riêng cho bạn.</span></h1>
-            <p className="text-body-lg text-viral-text-muted max-w-xl mb-8">ViralMinds - Tinh gọn nhân sự, nhân đôi hiệu suất</p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-8"><a href="#capabilities" className="btn-primary group">Khám phá đội ngũ AI <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></a><a href="#contact" className="btn-secondary">Đặt lịch tư vấn</a></div>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-body-sm text-viral-text-muted">{["Không cần học công cụ", "Duyệt trước khi xuất bản", "Tùy chỉnh theo doanh nghiệp"].map(x => <span key={x} className="flex items-center gap-2"><Check className="w-4 h-4 text-viral-ok" />{x}</span>)}</div>
+      <section id="overview" className="relative min-h-[90vh] overflow-hidden pt-28 pb-20 flex items-center">
+        {/* Velvety ambient glows */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
+        <div className="absolute top-1/3 right-10 w-[400px] h-[350px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
+        
+        <div className="container relative z-10 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-center">
+          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
+            <span className="section-label">
+              <Sparkles className="w-3.5 h-3.5 mr-2 text-amber-300" />
+              HỆ THỐNG ĐỘI NGŨ AI TINH GỌN CHO CHIẾN LƯỢC DIGITAL MARKETING
+            </span>
+            <h1 className="font-display text-display-xl mt-5 mb-6 text-white leading-[1.08] tracking-tight">
+              KIẾN TẠO TĂNG TRƯỞNG VƯỢT BẬC <span className="text-gradient-accent">VỚI SỨC MẠNH AI CHUYÊN BIỆT.</span>
+            </h1>
+            <p className="text-body-lg text-purple-100/80 max-w-xl mb-8 font-light text-lg">
+              ViralMinds - Tinh gọn nhân sự, tối ưu thời gian, nhân đôi hiệu quả.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="#capabilities" className="btn-primary group">
+                Khám phá đội ngũ AI <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#contact" className="btn-secondary">
+                Đặt lịch tư vấn
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2.5 text-body-sm text-purple-200/70">
+              {["Tập trung vào chuyển hóa & ROI", "Duyệt trước khi xuất bản", "May đo theo doanh nghiệp"].map(x => (
+                <span key={x} className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-amber-400" />
+                  {x}
+                </span>
+              ))}
+            </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .2, duration: .9 }} className="relative"><div className="absolute -inset-8 bg-viral-accent/15 blur-3xl rounded-full" /><div className="relative glass-panel rounded-card-xl p-2 overflow-hidden tech-frame"><img src="/viralminds-workflow.png" alt="Sơ đồ AI Workforce phối hợp quy trình Digital Marketing" className="w-full rounded-[18px]" /><div className="scan-line" aria-hidden="true" /></div></motion.div>
+          
+          {/* Sophisticated Growth Lens Visual with Particle Morphing */}
+          <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .25, duration: .9 }} className="relative w-full">
+            <GrowthLens />
+          </motion.div>
         </div>
       </section>
 
