@@ -3,26 +3,24 @@ import { MessageSquare, Mail, ArrowRight, Target } from "lucide-react";
 import { useState } from "react";
 
 const formFields = [
-  { name: "name", label: "Họ và tên", type: "text", placeholder: "Nguyễn Văn A", required: true },
-  { name: "company", label: "Tên doanh nghiệp", type: "text", placeholder: "Công ty TNHH ABC", required: true },
-  { name: "industry", label: "Ngành kinh doanh", type: "text", placeholder: "F&B / Spa / DTC / Khác", required: true },
+  { name: "name", label: "Tên của bạn", type: "text", placeholder: "Nguyễn Văn A", required: true },
+  { name: "contact", label: "Số điện thoại / Zalo", type: "text", placeholder: "0xxx xxx xxx", required: true },
+  { name: "company", label: "Doanh nghiệp", type: "text", placeholder: "Tên công ty", required: true },
+  { name: "industry", label: "Ngành / sản phẩm", type: "text", placeholder: "F&B, spa, giáo dục...", required: true },
 ];
 
 const painOptions = [
-  "Khó xây dựng nội dung",
-  "Mất nhiều thời gian vận hành Marketing",
-  "Quản lý nhiều công cụ rời rạc",
-  "Chưa có website",
-  "Website chưa có lượng truy cập tốt",
-  "Quảng cáo chưa hiệu quả",
-  "Khó theo dõi và phân tích dữ liệu",
-  "Chăm sóc khách hàng chưa hiệu quả",
-  "Khác",
+  "Nội dung",
+  "Website / SEO",
+  "Quảng cáo",
+  "Dữ liệu / CRM",
+  "Chưa rõ",
 ];
 
 export default function CTA() {
   const [formData, setFormData] = useState({
     name: "",
+    contact: "",
     company: "",
     industry: "",
     mainPain: "",
@@ -45,8 +43,8 @@ export default function CTA() {
         newErrors[field.name] = `${field.label} là bắt buộc`;
       }
     });
-    if (!formData.mainPain) newErrors.mainPain = "Vui lòng chọn vấn đề chính";
-    if (!formData.goal) newErrors.goal = "Vui lòng nhập mục tiêu";
+    if (!formData.mainPain) newErrors.mainPain = "Vui lòng chọn nhu cầu chính";
+    if (!formData.goal) newErrors.goal = "Vui lòng nhập mục tiêu chính";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -86,22 +84,63 @@ export default function CTA() {
   }
 
   return (
-    <section id="contact" className="relative py-20 md:py-28 lg:py-32">
+    <section id="contact" className="relative scroll-mt-20 py-14 md:py-20 lg:py-24">
       <div className="absolute inset-0 grid-bg noise-bg opacity-50" aria-hidden="true" />
       <div className="absolute inset-0 bg-gradient-to-t from-viral-bg-secondary/50 via-transparent to-transparent" aria-hidden="true" />
       
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <span className="section-label">Bắt đầu từ một vấn đề cụ thể</span>
-          <h2 className="section-title">Việc nào trong Marketing đang làm bạn mất thời gian nhất?</h2>
+        <div className="max-w-3xl mx-auto text-center mb-8 md:mb-10">
+          <span className="section-label">Liên hệ tư vấn</span>
+          <h2 className="section-title">Trao đổi nhanh với ViralMinds</h2>
           <p className="section-subtitle mt-4">
-            Chia sẻ mục tiêu hoặc vấn đề doanh nghiệp đang gặp phải. ViralMinds sẽ cùng bạn xác định hướng xây dựng AI Workforce phù hợp.
+            Chọn Zalo/email để trao đổi ngay, hoặc gửi form ngắn để ViralMinds nắm nhu cầu và tư vấn hướng triển khai phù hợp.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="glass-panel rounded-card-xl p-6 md:p-8 space-y-6" noValidate>
-            <div className="grid md:grid-cols-2 gap-6">
+        <motion.div
+          className="mx-auto mb-5 grid w-full max-w-[560px] grid-cols-2 gap-2.5 sm:gap-3"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+        >
+          <a
+            href="https://zalo.me/0374149427"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary min-h-[52px] w-full gap-1.5 px-3 py-3 sm:gap-2 sm:px-5"
+          >
+            <MessageSquare className="h-5 w-5" aria-hidden="true" />
+            <span className="whitespace-nowrap">Nhắn Zalo</span>
+          </a>
+          <a
+            href="mailto:viralminds.admin@gmail.com"
+            className="btn-secondary min-h-[52px] w-full gap-1.5 px-3 py-3 sm:gap-2 sm:px-5"
+          >
+            <Mail className="h-5 w-5" aria-hidden="true" />
+            <span className="whitespace-nowrap">Gửi email</span>
+          </a>
+        </motion.div>
+
+        <motion.form
+          onSubmit={handleSubmit}
+          className="glass-panel mx-auto max-w-4xl rounded-card-xl p-5 md:p-6 lg:p-8"
+          noValidate
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: 0.05 }}
+        >
+          <div className="mb-5">
+            <span className="font-mono text-label-sm uppercase text-viral-accent">Form ngắn</span>
+            <h3 className="mt-2 font-display text-heading-xl text-viral-text">Gửi thông tin tư vấn</h3>
+            <p className="mt-1 font-body text-body-sm text-viral-text-muted">
+              ViralMinds sẽ nắm nhu cầu và phản hồi hướng triển khai phù hợp.
+            </p>
+          </div>
+
+          <div className="space-y-5">
+            <div className="grid gap-4 sm:grid-cols-2">
               {formFields.map((field) => (
                 <div key={field.name}>
                   <label htmlFor={field.name} className="block font-mono label-sm text-viral-text-muted mb-2">
@@ -127,7 +166,7 @@ export default function CTA() {
 
             <div>
               <label className="block font-mono label-sm text-viral-text-muted mb-3">
-                Vấn đề doanh nghiệp đang gặp phải <span className="text-viral-alert" aria-hidden="true">*</span>
+                Bạn muốn cải thiện phần nào? <span className="text-viral-alert" aria-hidden="true">*</span>
               </label>
               <div className="flex flex-wrap gap-2">
                 {painOptions.map((pain) => (
@@ -149,7 +188,7 @@ export default function CTA() {
 
             <div>
               <label htmlFor="goal" className="block font-mono label-sm text-viral-text-muted mb-2">
-                Mục tiêu muốn cải thiện <span className="text-viral-alert" aria-hidden="true">*</span>
+                Mục tiêu chính <span className="text-viral-alert" aria-hidden="true">*</span>
               </label>
               <textarea
                 id="goal"
@@ -164,39 +203,12 @@ export default function CTA() {
               {errors.goal && <p className="mt-1 font-body body-sm text-viral-alert" role="alert">{errors.goal}</p>}
             </div>
 
-            <button type="submit" className="btn-primary w-full md:w-auto group">
-              <span>Đặt lịch tư vấn</span>
+            <button type="submit" className="btn-primary w-full group">
+              <span>Gửi yêu cầu tư vấn</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-          </form>
-
-          <motion.div
-            className="mt-10 pt-10 border-t border-viral-border text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="font-body body-md text-viral-text-muted mb-4">Hoặc liên hệ trực tiếp:</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://zalo.me/0374149427"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary flex items-center gap-2 w-full sm:w-auto"
-              >
-                <MessageSquare className="w-5 h-5" aria-hidden="true" />
-                <span>Zalo: 0374 149 427</span>
-              </a>
-              <a
-                href="mailto:contact@viralminds.vn"
-                className="btn-secondary flex items-center gap-2 w-full sm:w-auto"
-              >
-                <Mail className="w-5 h-5" aria-hidden="true" />
-                <span>Email: contact@viralminds.vn</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.form>
       </div>
     </section>
   );
