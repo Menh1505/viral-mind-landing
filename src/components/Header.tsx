@@ -24,7 +24,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 md:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-2">
-            <span className="w-9 h-9 rounded-card-md glass-panel flex items-center justify-center">
+            <span className="w-9 h-9 flex items-center justify-center">
               <img src="/logo.svg" width="24" height="23" alt="" aria-hidden="true" />
             </span>
             <span className="font-display text-heading-lg text-viral-text tracking-tight">ViralMinds</span>
