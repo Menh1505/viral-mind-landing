@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Menu, X, ArrowRight, MessageSquare } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -42,18 +42,9 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://zalo.me/0374149427"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono label-md text-viral-text-muted hover:text-viral-accent transition-colors duration-fast"
-            >
-              <MessageSquare className="w-4 h-4" aria-hidden="true" />
-              <span className="hidden xl:inline">Zalo 0374 149 427</span>
-            </a>
+          <div className="hidden md:flex items-center">
             <a href="#contact" className="btn-primary">
-              <span>Đặt lịch tư vấn</span>
+              <span>Liên hệ tư vấn</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
@@ -88,17 +79,8 @@ export default function Header() {
               </a>
             ))}
             <div className="pt-4 border-t border-viral-border space-y-3">
-              <a
-                href="https://zalo.me/0374149427"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 font-body label-lg text-viral-text-muted hover:text-viral-accent transition-colors duration-fast py-2"
-              >
-                <MessageSquare className="w-5 h-5" aria-hidden="true" />
-                <span>Zalo 0374 149 427</span>
-              </a>
               <a href="#contact" className="btn-primary w-full justify-center" onClick={() => setIsOpen(false)}>
-                <span>Đặt lịch tư vấn</span>
+                <span>Liên hệ tư vấn</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
