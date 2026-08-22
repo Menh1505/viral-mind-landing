@@ -1,6 +1,6 @@
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, PenTool, Globe, Users, ArrowUpRight, RotateCcw, Sparkles, Cpu, Layers } from "lucide-react";
+import { Search, PenTool, Globe, Users, ArrowUpRight, RotateCcw, Sparkles } from "lucide-react";
 
 interface BentoItem {
   id: string;
@@ -8,10 +8,6 @@ interface BentoItem {
   category: string;
   desc: string;
   icon: typeof Search;
-  tag: string;
-  metric: string;
-  metricLabel: string;
-  colSpan: string;
 }
 
 const bentoCards: BentoItem[] = [
@@ -21,10 +17,6 @@ const bentoCards: BentoItem[] = [
     title: "Research & Strategy",
     desc: "Tự động phân tích đối thủ, thị trường ngách và xác định chân dung khách hàng chuẩn xác theo thời gian thực.",
     icon: Search,
-    tag: "Deep Market Intelligence",
-    metric: "10x",
-    metricLabel: "Tốc độ nghiên cứu",
-    colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
   },
   {
     id: "content",
@@ -32,10 +24,6 @@ const bentoCards: BentoItem[] = [
     title: "Content Engine",
     desc: "Sản xuất và tối ưu hóa bài viết, video scripts, visual copy đồng bộ theo đúng giọng điệu thương hiệu.",
     icon: PenTool,
-    tag: "Multi-Format AI Studio",
-    metric: "300+",
-    metricLabel: "Ấn phẩm đa kênh / tuần",
-    colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
   },
   {
     id: "seo",
@@ -43,10 +31,6 @@ const bentoCards: BentoItem[] = [
     title: "SEO & AEO Authority",
     desc: "Tối ưu hóa khả năng xuất hiện top đầu trên Google Search và các công cụ trả lời AI (ChatGPT, Perplexity, Claude).",
     icon: Globe,
-    tag: "AI Engine Optimization",
-    metric: "94%",
-    metricLabel: "Tỉ lệ đề xuất bởi AI",
-    colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
   },
   {
     id: "crm",
@@ -54,10 +38,6 @@ const bentoCards: BentoItem[] = [
     title: "CRM & Growth Loop",
     desc: "Tự động phân loại lead, may đo kịch bản nuôi dưỡng cá nhân hóa và theo dõi dòng doanh thu chính xác.",
     icon: Users,
-    tag: "Predictive Lead Scoring",
-    metric: "+85%",
-    metricLabel: "Hiệu suất chuyển đổi",
-    colSpan: "col-span-1 md:col-span-2 lg:col-span-1",
   },
 ];
 
@@ -68,6 +48,98 @@ interface Particle {
   size: number;
   duration: number;
   delay: number;
+}
+
+const EMERALD_CUT_PATH =
+  "polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px)";
+
+/**
+ * Apple/Stripe-grade Glassmorphism Card with Emerald Cut (Notched Corners) & Dynamic Spotlight
+ */
+function LuxurySpotlightCard({ card, index }: { card: BentoItem; index: number }) {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const Icon = card.icon;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.07,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative p-[1px] transition-all duration-500"
+      style={{
+        clipPath: EMERALD_CUT_PATH,
+        WebkitClipPath: EMERALD_CUT_PATH,
+        background: isHovered
+          ? `radial-gradient(360px circle at ${mousePos.x}px ${mousePos.y}px, rgba(251, 191, 36, 0.55), rgba(255, 255, 255, 0.12) 40%, rgba(255, 255, 255, 0.05) 100%)`
+          : "rgba(255, 255, 255, 0.08)",
+        filter: isHovered
+          ? "drop-shadow(0 16px 36px rgba(245, 158, 11, 0.15)) drop-shadow(0 4px 12px rgba(0,0,0,0.8))"
+          : "drop-shadow(0 14px 30px rgba(0, 0, 0, 0.7))",
+      }}
+    >
+      {/* Inner Pure Glass Body with matching Emerald Cut clip-path */}
+      <div
+        className="relative w-full h-full p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-colors duration-500"
+        style={{
+          clipPath: EMERALD_CUT_PATH,
+          WebkitClipPath: EMERALD_CUT_PATH,
+          background: "rgba(11, 9, 20, 0.72)",
+          backdropFilter: "blur(30px)",
+          WebkitBackdropFilter: "blur(30px)",
+        }}
+      >
+        {/* Dynamic Cursor Spotlight Radial Glow */}
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-out"
+          style={{
+            opacity: isHovered ? 1 : 0,
+            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(245, 158, 11, 0.14), rgba(217, 119, 6, 0.03) 45%, transparent 80%)`,
+          }}
+        />
+
+        {/* Emerald Facet Reflection Lines at Top-Left and Bottom-Right notches */}
+        <div className="pointer-events-none absolute top-0 left-0 w-6 h-6 border-t border-l border-amber-300/30 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="pointer-events-none absolute bottom-0 right-0 w-6 h-6 border-b border-r border-amber-300/30 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+
+        {/* Card Content with refined hierarchy & airy spacing */}
+        <div className="relative z-10">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-[10px] font-mono tracking-[0.2em] text-zinc-400/75 uppercase font-medium">
+              {card.category}
+            </span>
+            <div className="w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-zinc-300 group-hover:text-amber-300 group-hover:border-amber-400/30 group-hover:bg-amber-500/10 transition-all duration-300">
+              <Icon className="w-3.5 h-3.5" />
+            </div>
+          </div>
+
+          <h4 className="text-base sm:text-[1.12rem] font-medium text-white tracking-tight flex items-center justify-between group-hover:text-amber-100 transition-colors duration-300">
+            <span>{card.title}</span>
+            <ArrowUpRight className="w-4 h-4 text-zinc-500 opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-amber-300 transition-all duration-300" />
+          </h4>
+
+          <p className="text-xs sm:text-[0.83rem] text-zinc-400 font-light leading-[1.7] mt-3 tracking-normal">
+            {card.desc}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
 }
 
 export default function GrowthLens() {
@@ -103,8 +175,9 @@ export default function GrowthLens() {
     <div className="relative w-full max-w-[660px] mx-auto min-h-[460px] flex items-center justify-center">
       {/* Background ambient gold/amber aura */}
       <div
-        className={`absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-purple-600/15 to-amber-400/5 blur-[90px] rounded-full pointer-events-none transition-all duration-1000 ${isExpanded ? "scale-125 opacity-90" : "scale-90 opacity-60"
-          }`}
+        className={`absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-purple-600/15 to-amber-400/5 blur-[90px] rounded-full pointer-events-none transition-all duration-1000 ${
+          isExpanded ? "scale-125 opacity-90" : "scale-90 opacity-60"
+        }`}
       />
 
       <AnimatePresence mode="wait">
@@ -228,22 +301,22 @@ export default function GrowthLens() {
           </motion.div>
         ) : (
           /* ========================================================================= */
-          /* EXPANDED STATE: 4 BENTO CARDS WITH GLASSMORPHISM & REFINED SANS-SERIF      */
+          /* EXPANDED STATE: APPLE / STRIPE LUXURY GLASSMORPHISM BENTO GRID            */
           /* ========================================================================= */
           <motion.div
             key="bento-stage"
-            className="w-full relative z-20 py-4"
-            initial={{ opacity: 0, scale: 0.92, y: 15 }}
+            className="w-full relative z-20 py-3"
+            initial={{ opacity: 0, scale: 0.94, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 10 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0, scale: 0.92, y: 8 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Header & Controls Bar */}
-            <div className="flex items-center justify-between mb-4 px-2">
+            <div className="flex items-center justify-between mb-4 px-1.5">
               <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] animate-pulse" />
-                <span className="text-xs font-mono text-amber-300 font-semibold tracking-wider uppercase">
-                  ViralMinds AI Workforce • 4 Chuyên Gia Hoạt Động
+                <div className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] animate-pulse" />
+                <span className="text-[11px] font-mono text-zinc-400 font-medium tracking-[0.14em] uppercase">
+                  VIRALMINDS WORKFORCE MODULES
                 </span>
               </div>
 
@@ -251,93 +324,19 @@ export default function GrowthLens() {
               <button
                 type="button"
                 onClick={handleCollapse}
-                className="group flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/40 text-xs font-mono text-zinc-300 hover:text-amber-200 backdrop-blur-md transition-all shadow-md active:scale-95 cursor-pointer"
+                className="group flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-amber-500/15 border border-white/[0.08] hover:border-amber-400/30 text-[11px] font-mono text-zinc-400 hover:text-amber-200 backdrop-blur-xl transition-all shadow-sm active:scale-95 cursor-pointer"
                 aria-label="Thu gọn về khối cầu Agent"
               >
-                <RotateCcw className="w-3.5 h-3.5 group-hover:-rotate-90 transition-transform duration-300 text-amber-400" />
+                <RotateCcw className="w-3 h-3 group-hover:-rotate-90 transition-transform duration-300 text-amber-400/80" />
                 <span>Thu gọn</span>
               </button>
             </div>
 
-            {/* 4-Card Bento Grid */}
+            {/* 4-Card Luxury Bento Grid with Cursor Spotlight */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
-              {bentoCards.map((card, idx) => {
-                const Icon = card.icon;
-                return (
-                  <motion.div
-                    key={card.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.45,
-                      delay: idx * 0.08,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    whileHover={{ y: -4, borderColor: "rgba(245, 158, 11, 0.4)" }}
-                    className="group relative rounded-2xl p-5 sm:p-6 transition-all duration-300 overflow-hidden flex flex-col justify-between"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(22, 17, 34, 0.82) 0%, rgba(10, 8, 18, 0.92) 100%)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                      boxShadow: "0 18px 45px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    {/* Top Highlight Sheen on Hover */}
-                    <div className="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-400/20 transition-all duration-500 pointer-events-none" />
-
-                    {/* Card Header */}
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">
-                          {card.category}
-                        </span>
-                        <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-amber-300 group-hover:bg-amber-500/20 group-hover:border-amber-400/40 group-hover:text-amber-200 transition-colors">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                      </div>
-
-                      <h4 className="text-base sm:text-lg font-display font-semibold text-white group-hover:text-amber-200 transition-colors flex items-center gap-1.5">
-                        {card.title}
-                        <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all text-amber-400" />
-                      </h4>
-
-                      <p className="text-xs text-zinc-300/80 font-body leading-relaxed mt-2 line-clamp-2">
-                        {card.desc}
-                      </p>
-                    </div>
-
-                    {/* Card Footer / Metrics */}
-                    <div className="mt-4 pt-3.5 border-t border-white/5 flex items-center justify-between">
-                      <span className="text-[11px] font-mono text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-full">
-                        {card.tag}
-                      </span>
-                      <div className="text-right">
-                        <span className="text-xs font-mono font-bold text-white block">
-                          {card.metric}
-                        </span>
-                        <span className="text-[9px] text-zinc-400 block font-body">
-                          {card.metricLabel}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Bottom Status Ribbon */}
-            <div className="mt-3.5 px-3 py-2 rounded-xl bg-purple-950/40 border border-purple-800/30 flex items-center justify-between text-xs text-purple-200/80">
-              <span className="flex items-center gap-2 font-mono text-[11px]">
-                <Cpu className="w-3.5 h-3.5 text-amber-400" />
-                Vận hành liên tục 24/7 • Đồng bộ dữ liệu tập trung
-              </span>
-              <a
-                href="#capabilities"
-                className="text-[11px] font-mono text-amber-300 hover:text-amber-200 underline underline-offset-2 flex items-center gap-1"
-              >
-                Khám phá chi tiết <Layers className="w-3 h-3" />
-              </a>
+              {bentoCards.map((card, idx) => (
+                <LuxurySpotlightCard key={card.id} card={card} index={idx} />
+              ))}
             </div>
           </motion.div>
         )}
