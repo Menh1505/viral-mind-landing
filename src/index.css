@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -309,7 +309,7 @@
   }
   .specialist-word { color: #c39af4; text-shadow: 0 0 28px rgba(195,154,244,.3); }
   .specialist-track { display: flex; flex-wrap: wrap; justify-content: center; gap: .55rem; margin-top: 2.25rem; }
-  .specialist-track span { padding: .5rem .75rem; border: 1px solid rgba(195,154,244,.25); border-radius: 999px; color: #cbbfd8; background: rgba(22,19,43,.62); font: 600 .68rem/1 'IBM Plex Mono', monospace; letter-spacing: .12em; }
+  .specialist-track span { padding: .5rem .75rem; border: 1px solid rgba(195,154,244,.25); border-radius: 999px; color: #cbbfd8; background: rgba(22,19,43,.62); font: 600 .68rem/1 'Montserrat', sans-serif; letter-spacing: .12em; }
 
   .capability-system { overflow: visible; background: transparent; border: 0; box-shadow: none; }
   .capability-map { position: relative; min-height: 580px; overflow: visible; background: transparent; border: 0; box-shadow: none; }
@@ -380,7 +380,7 @@
     background: radial-gradient(circle at 35% 25%, rgba(217, 119, 6, 0.8), rgba(40, 17, 55, 0.96) 58%, rgba(12, 10, 28, 0.99));
     box-shadow: 0 0 0 14px rgba(245, 158, 11, 0.1), 0 0 95px rgba(245, 158, 11, 0.65), 0 0 180px rgba(217, 119, 6, 0.35);
   }
-  .capability-core span { font: 600 .68rem/1 'IBM Plex Mono', monospace; letter-spacing: .12em; color: #fbbf24; text-shadow: 0 0 10px rgba(245, 158, 11, 0.8); }
+  .capability-core span { font: 600 .68rem/1 'Montserrat', sans-serif; letter-spacing: .12em; color: #fbbf24; text-shadow: 0 0 10px rgba(245, 158, 11, 0.8); }
   .capability-core strong { margin: .45rem 0; font: 700 1.55rem/1 'Montserrat', sans-serif; text-shadow: 0 0 16px rgba(255, 255, 255, 0.4); }
   .capability-core small { color: #fef08a; font-size: 0.72rem; }
 
@@ -443,7 +443,7 @@
   }
   .capability-node-sub {
     font-size: 0.65rem;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Montserrat', sans-serif;
     color: #a1a1aa;
     letter-spacing: 0.04em;
     margin-top: 0.15rem;
@@ -472,7 +472,7 @@
   .cap-growth { left: 7%; bottom: 8%; }
   .cap-crm { right: 7%; bottom: 8%; }
   .capability-detail { padding:2rem; border-top:1px solid rgba(255,255,255,.12); background:linear-gradient(135deg,rgba(69,25,82,.18),rgba(13,11,28,.8)); }
-  .detail-kicker { font:600 .75rem/1 'IBM Plex Mono',monospace; letter-spacing:.12em; text-transform:uppercase; }
+  .detail-kicker { font:600 .75rem/1 'Montserrat',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
   .issue-dot { width:8px; height:8px; margin-top:.5rem; flex:none; border-radius:50%; background:#ea6113; box-shadow:0 0 12px rgba(234,97,19,.7); }
   
   .capability-modal-backdrop {

@@ -263,7 +263,7 @@ export default function Home() {
   return <div className="min-h-screen bg-viral-bg text-viral-text font-body">
     <Header />
     <main id="main-content">
-      <section id="overview" className="relative min-h-[90vh] overflow-hidden pt-28 pb-20 flex items-center">
+      <section id="overview" className="relative min-h-[85vh] sm:min-h-[90vh] overflow-hidden pt-24 sm:pt-28 pb-14 sm:pb-20 flex items-center">
         {/* Velvety ambient glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
         <div className="absolute top-1/3 right-10 w-[400px] h-[350px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
@@ -271,17 +271,17 @@ export default function Home() {
         {/* Lightweight 60fps Ethereal Golden Dust Particles (replaces 2.54MB video) */}
         <EtherealGoldenDust particleCount={70} interactive={true} />
 
-        <div className="container relative z-10 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-center">
+        <div className="container relative z-10 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
-            <span className="section-label">
-              <Sparkles className="w-3.5 h-3.5 mr-2 text-amber-300" />
+            <span className="section-label inline-flex items-center text-xs sm:text-sm">
+              <Sparkles className="w-3.5 h-3.5 mr-2 text-amber-300 shrink-0" />
               HỆ THỐNG ĐỘI NGŨ AI TINH GỌN CHO CHIẾN LƯỢC DIGITAL MARKETING
             </span>
-            <h1 className="font-display text-display-xl mt-5 mb-6 text-white leading-[1.08] tracking-tight">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-display-xl mt-4 sm:mt-5 mb-5 sm:mb-6 text-white leading-[1.18] sm:leading-[1.12] lg:leading-[1.08] tracking-tight">
               <ScrambleText text="KIẾN TẠO TĂNG TRƯỞNG VƯỢT BẬC " delay={150} duration={1100} />
               <ScrambleText text="VỚI SỨC MẠNH AI CHUYÊN BIỆT." className="text-gradient-accent inline" delay={650} duration={1200} />
             </h1>
-            <p className="text-body-lg text-purple-100/80 max-w-xl mb-8 font-light text-lg min-h-[3.5rem]">
+            <p className="text-body-md sm:text-body-lg text-purple-100/80 max-w-xl mb-6 sm:mb-8 font-light text-base sm:text-lg min-h-[2.5rem] sm:min-h-[3.5rem]">
               <ScrambleText text="ViralMinds - Tinh gọn nhân sự, tối ưu thời gian, nhân đôi hiệu quả." delay={1100} duration={1300} as="span" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
