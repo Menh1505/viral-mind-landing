@@ -72,10 +72,10 @@ export default function Home() {
         {/* Velvety ambient glows */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
         <div className="absolute top-1/3 right-10 w-[400px] h-[350px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
-        
+
         {/* Lightweight 60fps Ethereal Golden Dust Particles (replaces 2.54MB video) */}
         <EtherealGoldenDust particleCount={70} interactive={true} />
-        
+
         <div className="container relative z-10 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-center">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
             <span className="section-label">
@@ -106,7 +106,7 @@ export default function Home() {
               ))}
             </div>
           </motion.div>
-          
+
           {/* Sophisticated Growth Lens Visual with Particle Morphing */}
           <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .25, duration: .9 }} className="relative w-full">
             <GrowthLens />
@@ -114,13 +114,40 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="capabilities" className="py-20 relative scroll-mt-16">
+      <section id="capabilities" className="py-24 relative scroll-mt-16 overflow-hidden">
         <div id="problem" className="absolute top-0" /><div id="solutions" className="absolute top-0" />
-        <div className="container"><div className="max-w-3xl mx-auto text-center mb-12"><span className="section-label">ViralMinds giúp bạn làm những gì?</span><h2 className="section-title">Mỗi bài toán Marketing được phụ trách bởi một nhóm AI Specialist phù hợp.</h2></div>
-          <div className="capability-system glass-panel rounded-card-xl relative max-w-5xl mx-auto">
-            <div className="capability-map grid-bg" role="group" aria-label="Các nhóm AI Specialist">
-              <div className="capability-ring" aria-hidden="true" /><div className="capability-pulse" aria-hidden="true" />
-              <div className="capability-core"><span>AI WORKFORCE</span><strong>ViralMinds</strong><small>Phối hợp vận hành</small></div>
+
+        {/* Cinematic Background Artwork */}
+        <div className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" aria-hidden="true">
+          <img
+            src="/backgrounds/Gemini_Generated_Image_llq8q9llq8q9llq8.png"
+            alt="ViralMinds AI Background"
+            className="w-full h-full object-cover object-center opacity-85"
+          />
+          {/* Subtle top & bottom edge transition */}
+          <div className="absolute inset-0 bg-gradient-to-b from-viral-bg/90 via-transparent to-viral-bg/95" />
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <span className="section-label">ViralMinds giúp bạn làm những gì?</span>
+            <h2 className="section-title">Mỗi bài toán Marketing được phụ trách bởi một nhóm AI Specialist phù hợp.</h2>
+          </div>
+          <div className="capability-system relative max-w-5xl mx-auto border-0 shadow-none overflow-visible">
+            <div className="capability-map border-0 overflow-visible" role="group" aria-label="Các nhóm AI Specialist">
+              {/* Expansive Ambient Halo Aura */}
+              <div className="capability-aura" aria-hidden="true" />
+              <div className="capability-ring-outer" aria-hidden="true" />
+              <div className="capability-ring" aria-hidden="true" />
+              <div className="capability-pulse" aria-hidden="true" />
+              <div className="capability-pulse capability-pulse-delayed" aria-hidden="true" />
+
+              <div className="capability-core">
+                <span>AI WORKFORCE</span>
+                <strong>ViralMinds</strong>
+                <small>Phối hợp vận hành</small>
+              </div>
               {capabilities.map((item, i) => <button key={item.slug} type="button" aria-haspopup="dialog" onClick={() => setActive(i)} className={`capability-node ${item.position}`}><item.icon /><span>{item.title}</span></button>)}
             </div>
           </div>
