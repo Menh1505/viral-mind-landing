@@ -111,10 +111,141 @@ const valuePillars = [
   },
 ];
 
+const dashboardPresets = {
+  sme: {
+    name: "SME / Khởi nghiệp",
+    badge: "TIẾT KIỆM TỐI ĐA",
+    metrics: [
+      {
+        code: "01",
+        label: "EXPECTED GROWTH",
+        value: "2.8x",
+        sub: "+180% ROI",
+        desc: "Tăng trưởng chuyển đổi phễu ban đầu",
+        sparkline: [20, 35, 45, 40, 60, 75, 90],
+        log: "NODE 01: Thiết lập kênh chuyển đổi tự động & lead capture cơ bản.",
+      },
+      {
+        code: "02",
+        label: "LABOR & TIME SAVED",
+        value: "-65%",
+        sub: "180h/tháng",
+        desc: "Tiết kiệm thời gian tạo nội dung & bài đăng",
+        sparkline: [80, 70, 55, 45, 38, 30, 25],
+        log: "NODE 02: Tự động hóa lịch đăng và phân phối nội dung đa kênh.",
+      },
+      {
+        code: "03",
+        label: "AUTONOMOUS OPERATION",
+        value: "24/7",
+        sub: "0 latency",
+        desc: "AI Specialist phản hồi lead tức thì",
+        sparkline: [95, 98, 97, 99, 98, 99, 100],
+        log: "NODE 03: Phản hồi khách hàng & phân loại lead thời gian thực.",
+      },
+      {
+        code: "04",
+        label: "DATA INTEGRITY",
+        value: "100%",
+        sub: "3 Kênh cốt lõi",
+        desc: "Đồng bộ Website, Fanpage & CRM",
+        sparkline: [60, 75, 85, 90, 95, 98, 100],
+        log: "NODE 04: Đồng bộ dữ liệu tập trung, hạn chế phân mảnh thông tin.",
+      },
+    ],
+  },
+  growth: {
+    name: "Scale & Growth",
+    badge: "TĂNG TỐC QUY MÔ",
+    metrics: [
+      {
+        code: "01",
+        label: "EXPECTED GROWTH",
+        value: "3.5x",
+        sub: "+340% ROI",
+        desc: "Tăng trưởng hiệu suất chuyển đổi toàn phễu",
+        sparkline: [25, 40, 55, 65, 80, 95, 115],
+        log: "NODE 01: Tối ưu đa biến Ads + Phân tích hành vi sâu đa kênh.",
+      },
+      {
+        code: "02",
+        label: "LABOR & TIME SAVED",
+        value: "-80%",
+        sub: "420h/tháng",
+        desc: "Tiết kiệm ngân sách nhân sự cồng kềnh",
+        sparkline: [90, 75, 60, 45, 30, 22, 18],
+        log: "NODE 02: Bàn giao dữ liệu tự động giữa SEO, Content & Ads.",
+      },
+      {
+        code: "03",
+        label: "AUTONOMOUS OPERATION",
+        value: "24/7",
+        sub: "0 latency",
+        desc: "AI Specialist sản xuất & tối ưu liên tục",
+        sparkline: [98, 99, 99, 100, 99, 100, 100],
+        log: "NODE 03: Vận hành chiến dịch & A/B testing tự động 24/7.",
+      },
+      {
+        code: "04",
+        label: "DATA INTEGRITY",
+        value: "100%",
+        sub: "Omnichannel",
+        desc: "Đồng nhất nhận diện Content, Ads & CRM",
+        sparkline: [70, 80, 88, 94, 98, 100, 100],
+        log: "NODE 04: Single Source of Truth toàn bộ điểm chạm số.",
+      },
+    ],
+  },
+  enterprise: {
+    name: "Enterprise",
+    badge: "ORCHESTRATION TOÀN DIỆN",
+    metrics: [
+      {
+        code: "01",
+        label: "EXPECTED GROWTH",
+        value: "4.8x",
+        sub: "+520% ROI",
+        desc: "Đột phá quy mô doanh thu đa chi nhánh",
+        sparkline: [35, 55, 75, 95, 120, 145, 175],
+        log: "NODE 01: Điều phối ma trận AI chuyên sâu & phân tích dự đoán doanh thu.",
+      },
+      {
+        code: "02",
+        label: "LABOR & TIME SAVED",
+        value: "-88%",
+        sub: "1,200h/tháng",
+        desc: "Tối ưu hóa toàn diện chi phí phòng ban",
+        sparkline: [95, 80, 60, 40, 25, 15, 10],
+        log: "NODE 02: Tự động hóa luồng phê duyệt & đồng bộ liên phòng ban.",
+      },
+      {
+        code: "03",
+        label: "AUTONOMOUS OPERATION",
+        value: "99.9%",
+        sub: "SLA Guaranteed",
+        desc: "Hạ tầng AI Enterprise chịu tải lớn",
+        sparkline: [99, 99.5, 99.8, 99.9, 99.9, 99.9, 100],
+        log: "NODE 03: Hạ tầng phân tán, bảo mật & mã hóa cấp doanh nghiệp.",
+      },
+      {
+        code: "04",
+        label: "DATA INTEGRITY",
+        value: "100%",
+        sub: "Global API & ERP",
+        desc: "Tích hợp ERP, Data Warehouse & CDP",
+        sparkline: [85, 92, 96, 98, 100, 100, 100],
+        log: "NODE 04: Tích hợp API hai chiều vào hệ thống ERP/CRM lõi.",
+      },
+    ],
+  },
+};
+
 export default function Home() {
   const [active, setActive] = useState<number | null>(null);
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
+  const [dashboardScale, setDashboardScale] = useState<"sme" | "growth" | "enterprise">("growth");
+  const [activeInspector, setActiveInspector] = useState<number>(0);
   const selected = active === null ? null : capabilities[active];
 
   useEffect(() => {
@@ -457,9 +588,9 @@ export default function Home() {
                       className="relative p-7 sm:p-8 h-full flex flex-col justify-between bg-[rgba(16,11,22,0.94)] backdrop-blur-2xl overflow-hidden min-h-[365px]"
                       style={{ clipPath: EMERALD_CUT_PATH }}
                     >
-                      {/* Sunken Large Watermark Numeral in Background */}
+                      {/* Sunken Large Watermark Numeral in Background - Shifted left to avoid cut corner */}
                       <span
-                        className="absolute bottom-1 right-2 text-7xl sm:text-8xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-500 text-orange-500/[0.1] group-hover:text-orange-400/[0.28] group-hover:-translate-x-1 group-hover:-translate-y-1"
+                        className="absolute bottom-1 right-8 sm:right-10 text-7xl sm:text-8xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-500 text-orange-500/[0.1] group-hover:text-orange-400/[0.28] group-hover:-translate-x-1 group-hover:-translate-y-1"
                         aria-hidden="true"
                       >
                         {step.step}
@@ -600,9 +731,9 @@ export default function Home() {
                       className="relative p-7 sm:p-8 h-full flex flex-col justify-between bg-[rgba(16,11,24,0.94)] backdrop-blur-2xl overflow-hidden min-h-[365px]"
                       style={{ clipPath: EMERALD_CUT_PATH }}
                     >
-                      {/* Sunken Large Watermark Numeral in Background */}
+                      {/* Sunken Large Watermark Numeral in Background - Shifted left to avoid cut corner */}
                       <span
-                        className="absolute bottom-1 right-2 text-7xl sm:text-8xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-500 text-amber-500/[0.08] group-hover:text-amber-400/[0.24] group-hover:-translate-x-1 group-hover:-translate-y-1"
+                        className="absolute bottom-1 right-8 sm:right-10 text-7xl sm:text-8xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-500 text-amber-500/[0.08] group-hover:text-amber-400/[0.24] group-hover:-translate-x-1 group-hover:-translate-y-1"
                         aria-hidden="true"
                       >
                         0{i + 1}
@@ -675,7 +806,347 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20"><div className="container"><div className="glass-panel rounded-card-xl p-8 md:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center"><div><span className="section-label">Mô hình triển khai</span><h2 className="section-title">Chi phí được xác định theo phạm vi triển khai thực tế</h2><p className="section-subtitle mt-4">Sau khi tìm hiểu mục tiêu, dữ liệu và quy trình hiện tại, ViralMinds sẽ đề xuất cấu trúc AI Workforce, thời gian và chi phí phù hợp.</p><div className="flex flex-wrap gap-4 mt-6 text-body-sm text-viral-text-muted"><span className="flex gap-2"><CircleCheck className="w-5 h-5 text-viral-ok" />Tư vấn, thiết kế & triển khai</span><span className="flex gap-2"><Layers3 className="w-5 h-5 text-viral-accent" />Chi phí AI theo sử dụng</span><span className="flex gap-2"><Target className="w-5 h-5 text-viral-accent" />Theo mục tiêu</span></div></div><div className="flex flex-col gap-3"><a href="#contact" className="btn-primary">Đặt lịch tư vấn <ArrowRight className="w-5 h-5" /></a><Link to="/details/pricing" className="text-center text-body-sm text-viral-text-muted hover:text-viral-accent">Xem mô hình chi phí</Link></div></div></div></section>
+      {/* Premium Tech Grid: Deployment Model & Pricing */}
+      <section id="pricing" className="py-28 relative overflow-hidden">
+        {/* Background Ambient Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[400px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" aria-hidden="true" />
+
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* 1. Left Column (Text & Minimalist Glass Feature Cards) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 flex flex-col justify-center"
+            >
+              {/* Tier 1: Sub-heading / Eyebrow (Small, Amber-Gold) */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase font-semibold text-amber-300 bg-amber-500/10 border border-amber-400/30 shadow-[0_0_16px_rgba(245,158,11,0.2)] mb-5 w-fit">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_6px_#f59e0b]" />
+                MÔ HÌNH TRIỂN KHAI & CHI PHÍ
+              </div>
+
+              {/* Tier 2: Main Heading (Large, Bold, High Aesthetic Hierarchy) */}
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-[1.18]">
+                May đo theo quy mô, <br />
+                <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-amber-400 bg-clip-text text-transparent">
+                  tối ưu theo kết quả thực tế
+                </span>
+              </h2>
+
+              {/* Tier 3: Description Paragraph */}
+              <p className="text-zinc-300/90 text-sm sm:text-base leading-relaxed mt-5 max-w-xl">
+                Không áp đặt các gói cố định cồng kềnh. Sau khi khảo sát mục tiêu và luồng dữ liệu, ViralMinds thiết kế cấu trúc AI Workforce tinh gọn với ngân sách tối ưu hóa theo giá trị doanh thu thực tế.
+              </p>
+
+              {/* 3 Synchronized Emerald Cut Minimalist Feature Cards */}
+              <div className="grid sm:grid-cols-3 gap-3.5 mt-8">
+                {[
+                  {
+                    step: "01",
+                    title: "Tư vấn & May đo",
+                    desc: "Thiết kế kiến trúc AI chuẩn theo luồng nghiệp vụ riêng.",
+                    icon: SlidersHorizontal,
+                  },
+                  {
+                    step: "02",
+                    title: "Pay-as-you-go AI",
+                    desc: "Chi phí hạ tầng AI linh hoạt theo mức độ sử dụng thực tế.",
+                    icon: Cpu,
+                  },
+                  {
+                    step: "03",
+                    title: "Cam kết mục tiêu",
+                    desc: "Gắn liền kết quả bàn giao với KPI tăng trưởng doanh thu.",
+                    icon: Target,
+                  },
+                ].map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.step} className="group relative transition-all duration-300 hover:scale-[1.02]">
+                      {/* Outer Emerald Cut Border */}
+                      <div
+                        className="p-[1px] h-full transition-all duration-500 relative bg-gradient-to-br from-amber-500/30 via-zinc-700/40 to-purple-900/30 group-hover:from-amber-400 group-hover:via-amber-500 group-hover:to-orange-500 group-hover:shadow-[0_16px_35px_-10px_rgba(245,158,11,0.4)]"
+                        style={{ clipPath: EMERALD_CUT_PATH }}
+                      >
+                        {/* Top-Left Steel Armor Bracket */}
+                        <div className="absolute top-0 left-0 w-6 h-6 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                          <svg className="w-6 h-6 overflow-visible" viewBox="0 0 32 32">
+                            <polygon points="0,16 16,0 20,0 0,20" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
+                            <line x1="0" y1="16" x2="16" y2="0" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" />
+                            <circle cx="8.5" cy="8.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
+                          </svg>
+                        </div>
+
+                        {/* Bottom-Right Steel Armor Bracket */}
+                        <div className="absolute bottom-0 right-0 w-6 h-6 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                          <svg className="w-6 h-6 overflow-visible" viewBox="0 0 32 32">
+                            <polygon points="32,16 16,32 12,32 32,12" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
+                            <line x1="32" y1="16" x2="16" y2="32" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" />
+                            <circle cx="23.5" cy="23.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
+                          </svg>
+                        </div>
+
+                        {/* Inner Body */}
+                        <div
+                          className="relative p-5 h-full flex flex-col justify-between bg-[rgba(16,11,24,0.92)] backdrop-blur-2xl overflow-hidden min-h-[160px]"
+                          style={{ clipPath: EMERALD_CUT_PATH }}
+                        >
+                          {/* Sunken Large Watermark - Shifted left to avoid cut corner */}
+                          <span
+                            className="absolute bottom-0 right-4 sm:right-5 text-5xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-300 text-amber-500/[0.08] group-hover:text-amber-400/[0.2]"
+                            aria-hidden="true"
+                          >
+                            {item.step}
+                          </span>
+
+                          <div className="relative z-10">
+                            {/* Seamless Large Monoline Icon */}
+                            <div className="text-amber-400 group-hover:text-amber-300 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_14px_rgba(245,158,11,0.7)] mb-3">
+                              <Icon className="w-7 h-7 stroke-[1.25]" />
+                            </div>
+
+                            <h4 className="font-display text-sm font-bold text-white group-hover:text-amber-200 transition-colors">
+                              {item.title}
+                            </h4>
+                            <p className="text-[11px] text-zinc-400 leading-snug mt-1.5">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* CTA Action Area */}
+              <div className="mt-9 flex flex-wrap items-center gap-5">
+                <a
+                  href="#contact"
+                  className="relative group px-9 py-4 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 font-display text-sm font-bold text-black tracking-wide uppercase transition-all duration-300 hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-3 border border-amber-300/40"
+                >
+                  <span className="relative z-10">ĐẶT LỊCH TƯ VẤN</span>
+                  <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform relative z-10" />
+                  <div className="absolute inset-0 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+
+                <Link
+                  to="/details/pricing"
+                  className="font-mono text-xs tracking-wider uppercase text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span>Xem mô hình chi phí chi tiết</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* 2. Right Column (Fully Interactive Emerald Cut Dashboard Mockup) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30, y: 10 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 relative"
+            >
+              {/* Dashboard Outer Luxury Aura */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-purple-600/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+              {/* Dashboard Outer Emerald Cut Layer */}
+              <div
+                className="p-[1px] relative bg-gradient-to-br from-amber-500/40 via-zinc-700/50 to-purple-900/40 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_50px_rgba(245,158,11,0.15)]"
+                style={{ clipPath: EMERALD_CUT_PATH }}
+              >
+                {/* Top-Left Main Steel Armor Bracket */}
+                <div className="absolute top-0 left-0 w-8 h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                  <svg className="w-8 h-8 overflow-visible" viewBox="0 0 32 32">
+                    <polygon points="0,16 16,0 20,0 0,20" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
+                    <line x1="0" y1="16" x2="16" y2="0" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
+                    <circle cx="8.5" cy="8.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
+                  </svg>
+                </div>
+
+                {/* Bottom-Right Main Steel Armor Bracket */}
+                <div className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                  <svg className="w-8 h-8 overflow-visible" viewBox="0 0 32 32">
+                    <polygon points="32,16 16,32 12,32 32,12" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
+                    <line x1="32" y1="16" x2="16" y2="32" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
+                    <circle cx="23.5" cy="23.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
+                  </svg>
+                </div>
+
+                {/* Dashboard Inner Body */}
+                <div
+                  className="relative bg-[rgba(15,10,24,0.94)] backdrop-blur-2xl p-6 sm:p-7 overflow-hidden"
+                  style={{ clipPath: EMERALD_CUT_PATH }}
+                >
+                  {/* Subtle Grid Background */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#f59e0b08_1px,transparent_1px),linear-gradient(to_bottom,#f59e0b08_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+                  {/* Header Bar */}
+                  <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pb-5 mb-5 border-b border-white/10">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                      <span className="ml-2 font-mono text-[11px] text-zinc-400 tracking-wider hidden sm:inline">
+                        AI_SIMULATOR_v2.4
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_#10b981]" />
+                      LIVE TELEMETRY
+                    </div>
+                  </div>
+
+                  {/* Interactive Scale Segmented Tabs */}
+                  <div className="relative z-10 mb-5 p-1 rounded-xl bg-black/50 border border-white/10 flex items-center gap-1">
+                    {(["sme", "growth", "enterprise"] as const).map((scaleKey) => {
+                      const isActive = dashboardScale === scaleKey;
+                      const preset = dashboardPresets[scaleKey];
+                      return (
+                        <button
+                          key={scaleKey}
+                          onClick={() => setDashboardScale(scaleKey)}
+                          className={`flex-1 py-2 px-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 relative text-center flex items-center justify-center gap-1.5 ${
+                            isActive
+                              ? "text-black font-bold shadow-[0_0_20px_rgba(245,158,11,0.5)]"
+                              : "text-zinc-400 hover:text-zinc-200 hover:bg-white/5"
+                          }`}
+                        >
+                          {isActive && (
+                            <motion.div
+                              layoutId="activeScaleTab"
+                              className="absolute inset-0 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-orange-400"
+                              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                            />
+                          )}
+                          <span className="relative z-10 tracking-wider">
+                            {preset.name}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Dashboard Metrics Grid (2x2 Interactive Emerald Cut Widgets) */}
+                  <div className="relative z-10 grid grid-cols-2 gap-3.5 mb-4">
+                    {dashboardPresets[dashboardScale].metrics.map((metric, idx) => {
+                      const isInspected = activeInspector === idx;
+                      return (
+                        <div
+                          key={metric.code}
+                          onClick={() => setActiveInspector(idx)}
+                          onMouseEnter={() => setActiveInspector(idx)}
+                          className={`p-[1px] relative cursor-pointer transition-all duration-300 ${
+                            isInspected
+                              ? "bg-gradient-to-br from-amber-400 via-orange-400 to-amber-500 shadow-[0_12px_30px_-8px_rgba(245,158,11,0.45)] scale-[1.02] z-20"
+                              : "bg-gradient-to-br from-amber-500/20 via-zinc-800/40 to-purple-900/20 opacity-85 hover:opacity-100 z-10"
+                          }`}
+                          style={{ clipPath: EMERALD_CUT_PATH }}
+                        >
+                          <div
+                            className={`p-4 sm:p-5 relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300 ${
+                              isInspected
+                                ? "bg-[rgba(24,15,36,0.96)] backdrop-blur-2xl"
+                                : "bg-[rgba(18,12,28,0.92)] backdrop-blur-xl"
+                            }`}
+                            style={{ clipPath: EMERALD_CUT_PATH }}
+                          >
+                            {/* Sunken Watermark */}
+                            <span className="absolute bottom-1 right-5 sm:right-6 text-4xl font-mono font-black text-amber-500/[0.07] pointer-events-none select-none">
+                              {metric.code}
+                            </span>
+
+                            <div className="relative z-10">
+                              <div className="flex items-center justify-between mb-1.5">
+                                <span className="font-mono text-[9px] sm:text-[10px] text-amber-400/90 uppercase tracking-wider">
+                                  {metric.label}
+                                </span>
+                                {isInspected && (
+                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                                )}
+                              </div>
+
+                              <AnimatePresence mode="wait">
+                                <motion.div
+                                  key={metric.value + dashboardScale}
+                                  initial={{ opacity: 0, y: 6 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  exit={{ opacity: 0, y: -6 }}
+                                  transition={{ duration: 0.25 }}
+                                  className="font-mono text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-baseline gap-1"
+                                >
+                                  <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-amber-400 bg-clip-text text-transparent">
+                                    {metric.value}
+                                  </span>
+                                  <span className="text-[10px] font-mono text-emerald-400 font-semibold">
+                                    {metric.sub}
+                                  </span>
+                                </motion.div>
+                              </AnimatePresence>
+
+                              <p className="text-[10px] sm:text-[11px] text-zinc-400 mt-2 leading-relaxed line-clamp-2">
+                                {metric.desc}
+                              </p>
+                            </div>
+
+                            {/* Mini Reactive Sparkline Waveform */}
+                            <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
+                              <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
+                                NODE_{metric.code}
+                              </span>
+                              <svg className="w-14 h-4 overflow-visible" viewBox="0 0 60 16">
+                                <polyline
+                                  fill="none"
+                                  stroke={isInspected ? "#f59e0b" : "rgba(245,158,11,0.4)"}
+                                  strokeWidth={isInspected ? "2" : "1.25"}
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  points="0,12 10,8 20,13 30,5 40,9 50,3 60,7"
+                                />
+                                {isInspected && (
+                                  <circle cx="60" cy="7" r="2" fill="#fef08a" className="animate-pulse" />
+                                )}
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom Live Interactive Diagnostic Terminal Bar */}
+                  <div className="relative z-10 p-3.5 rounded-xl bg-black/60 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs text-zinc-400">
+                    <div className="flex items-center gap-2 overflow-hidden">
+                      <div className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] shrink-0" />
+                      <span className="text-amber-300 font-semibold text-[11px] shrink-0">DIAGNOSTIC:</span>
+                      <AnimatePresence mode="wait">
+                        <motion.span
+                          key={dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
+                          initial={{ opacity: 0, x: 8 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -8 }}
+                          transition={{ duration: 0.2 }}
+                          className="text-zinc-300 text-[11px] truncate"
+                        >
+                          {dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
+                        </motion.span>
+                      </AnimatePresence>
+                    </div>
+                    <span className="text-[10px] text-zinc-500 shrink-0 uppercase tracking-widest hidden md:inline">
+                      {dashboardPresets[dashboardScale].badge}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       <CTA />
     </main><Footer />
   </div>;
