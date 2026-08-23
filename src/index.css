@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    font-family: 'Mulish', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     font-synthesis: none;
@@ -245,7 +245,7 @@
     color: #f7efff;
     background: linear-gradient(135deg, rgba(69,25,82,.94), rgba(22,19,43,.94));
     box-shadow: 0 15px 34px -20px rgba(195,154,244,.85);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 650;
   }
 
@@ -286,12 +286,12 @@
     box-shadow: 0 0 0 10px rgba(234,97,19,.04), 0 0 60px rgba(234,97,19,.22);
   }
 
-  .problem-core strong { margin: .35rem 0; font: 700 1.4rem/1.05 'Space Grotesk', sans-serif; }
+  .problem-core strong { margin: .35rem 0; font: 700 1.4rem/1.05 'Montserrat', sans-serif; }
   .problem-core small { color: #b8aec9; font-size: .67rem; }
   .problem-pulse { position: absolute; left: 50%; top: 44%; width: 200px; aspect-ratio: 1; translate: -50% -50%; border: 1px solid rgba(234,97,19,.5); border-radius: 50%; animation: systemPulse 2.8s ease-out infinite; }
 
   .workforce-statement {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 5vw, 4.25rem);
     font-weight: 600;
     line-height: 1.12;
@@ -316,10 +316,10 @@
   .capability-ring::after { content:''; position:absolute; inset:42px; border:1px dashed rgba(195,154,244,.35); border-radius:50%; animation:brokenRotate 20s linear infinite reverse; }
   .capability-core { position:absolute; z-index:3; left:50%; top:48%; translate:-50% -50%; width:190px; aspect-ratio:1; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; border:1px solid rgba(243,159,90,.66); background:radial-gradient(circle at 35% 25%,rgba(174,68,90,.62),rgba(40,17,55,.96) 58%,rgba(12,10,28,.98)); box-shadow:0 0 0 10px rgba(234,97,19,.04),0 0 65px rgba(234,97,19,.24); }
   .capability-core span { font:600 .68rem/1 'IBM Plex Mono',monospace; letter-spacing:.12em; color:#f39f5a; }
-  .capability-core strong { margin:.45rem 0; font:700 1.55rem/1 'Cabin',sans-serif; }
+  .capability-core strong { margin:.45rem 0; font:700 1.55rem/1 'Montserrat',sans-serif; }
   .capability-core small { color:#b8aec9; }
   .capability-pulse { position:absolute; left:50%; top:48%; translate:-50% -50%; width:205px; aspect-ratio:1; border:1px solid rgba(243,159,90,.5); border-radius:50%; animation:systemPulse 2.8s ease-out infinite; }
-  .capability-node { position:absolute; z-index:4; display:flex; align-items:center; gap:.65rem; padding:.85rem 1rem; max-width:200px; border:1px solid rgba(195,154,244,.3); border-radius:15px; color:#f7efff; background:linear-gradient(135deg,rgba(69,25,82,.94),rgba(22,19,43,.96)); box-shadow:0 16px 35px -24px rgba(195,154,244,.9); font:700 .92rem/1.15 'Cabin',sans-serif; text-align:left; transition:.25s ease; }
+  .capability-node { position:absolute; z-index:4; display:flex; align-items:center; gap:.65rem; padding:.85rem 1rem; max-width:200px; border:1px solid rgba(195,154,244,.3); border-radius:15px; color:#f7efff; background:linear-gradient(135deg,rgba(69,25,82,.94),rgba(22,19,43,.96)); box-shadow:0 16px 35px -24px rgba(195,154,244,.9); font:700 .92rem/1.15 'Montserrat',sans-serif; text-align:left; transition:.25s ease; }
   .capability-node svg { width:20px; height:20px; flex:none; color:#d7bdf7; }
   .capability-node:hover,.capability-node.is-active { border-color:rgba(243,159,90,.85); translate:0 -3px; background:linear-gradient(135deg,rgba(106,38,95,.98),rgba(33,21,57,.98)); box-shadow:0 0 0 3px rgba(243,159,90,.08),0 18px 45px -18px rgba(243,159,90,.7); }
   .capability-node.is-active svg { color:#f39f5a; }

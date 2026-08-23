@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import GrowthLens from "@/components/GrowthLens";
+import EtherealGoldenDust from "@/components/EtherealGoldenDust";
+import ScrambleText from "@/components/ScrambleText";
 
 const capabilities = [
   {
@@ -71,6 +73,9 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none" aria-hidden="true" />
         <div className="absolute top-1/3 right-10 w-[400px] h-[350px] bg-amber-500/10 blur-[100px] rounded-full pointer-events-none" aria-hidden="true" />
         
+        {/* Lightweight 60fps Ethereal Golden Dust Particles (replaces 2.54MB video) */}
+        <EtherealGoldenDust particleCount={70} interactive={true} />
+        
         <div className="container relative z-10 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-14 items-center">
           <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
             <span className="section-label">
@@ -78,10 +83,11 @@ export default function Home() {
               HỆ THỐNG ĐỘI NGŨ AI TINH GỌN CHO CHIẾN LƯỢC DIGITAL MARKETING
             </span>
             <h1 className="font-display text-display-xl mt-5 mb-6 text-white leading-[1.08] tracking-tight">
-              KIẾN TẠO TĂNG TRƯỞNG VƯỢT BẬC <span className="text-gradient-accent">VỚI SỨC MẠNH AI CHUYÊN BIỆT.</span>
+              <ScrambleText text="KIẾN TẠO TĂNG TRƯỞNG VƯỢT BẬC " delay={150} duration={1100} />
+              <ScrambleText text="VỚI SỨC MẠNH AI CHUYÊN BIỆT." className="text-gradient-accent inline" delay={650} duration={1200} />
             </h1>
-            <p className="text-body-lg text-purple-100/80 max-w-xl mb-8 font-light text-lg">
-              ViralMinds - Tinh gọn nhân sự, tối ưu thời gian, nhân đôi hiệu quả.
+            <p className="text-body-lg text-purple-100/80 max-w-xl mb-8 font-light text-lg min-h-[3.5rem]">
+              <ScrambleText text="ViralMinds - Tinh gọn nhân sự, tối ưu thời gian, nhân đôi hiệu quả." delay={1100} duration={1300} as="span" />
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href="#capabilities" className="btn-primary group">

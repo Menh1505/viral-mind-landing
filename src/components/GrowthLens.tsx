@@ -256,7 +256,7 @@ export default function GrowthLens() {
                     </span>
                   </motion.div>
 
-                  <h3 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] flex items-center gap-1">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] flex items-center gap-1">
                     Agent
                   </h3>
 

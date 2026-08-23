@@ -33,8 +33,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Cabin", "system-ui", "sans-serif"],
-        body: ["Mulish", "system-ui", "sans-serif"],
+        display: ["Montserrat", "system-ui", "sans-serif"],
+        body: ["Montserrat", "system-ui", "sans-serif"],
+        sans: ["Montserrat", "system-ui", "sans-serif"],
+        serif: ["Montserrat", "serif"],
         mono: ["IBM Plex Mono", "monospace"],
       },
       fontSize: {
