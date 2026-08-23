@@ -1,6 +1,6 @@
 
 
-# VIRALMINDS — LANDING PAGE
+# VIRALMINDS - LANDING PAGE
 
 ## HEADER
 
@@ -20,7 +20,7 @@
 
 ### Biến những AI rời rạc thành một đội ngũ có thể phối hợp và vận hành theo quy trình của doanh nghiệp.
 
-Từ Research, Strategy, Content, Website, SEO, AEO, Distribution, Ads, Analytics đến CRM — ViralMinds kết nối các năng lực AI thành một quy trình Digital Marketing thống nhất, được thiết kế phù hợp với từng doanh nghiệp.
+Từ Research, Strategy, Content, Website, SEO, AEO, Distribution, Ads, Analytics đến CRM - ViralMinds kết nối các năng lực AI thành một quy trình Digital Marketing thống nhất, được thiết kế phù hợp với từng doanh nghiệp.
 
 **Bạn đưa ra mục tiêu. ViralMinds hỗ trợ triển khai. Bạn kiểm soát và phê duyệt.**
 
@@ -57,7 +57,7 @@ ViralMinds kết hợp nhiều **AI Specialist**, mỗi AI đảm nhận một n
 
 Thay vì sử dụng nhiều AI riêng lẻ cho từng công việc, doanh nghiệp có thể giao mục tiêu và để ViralMinds hỗ trợ điều phối những công việc cần thiết để hoàn thành mục tiêu đó.
 
-### Một hệ thống — nhiều chuyên môn — một quy trình thống nhất.
+### Một hệ thống - nhiều chuyên môn - một quy trình thống nhất.
 
 ---
 
@@ -65,41 +65,41 @@ Thay vì sử dụng nhiều AI riêng lẻ cho từng công việc, doanh nghi�
 
 ## Từ xây dựng nền tảng đến vận hành và tối ưu Digital Marketing
 
-### 01 — Research & Strategy
+### 01 - Research & Strategy
 
 Nghiên cứu thị trường, khách hàng, đối thủ và xu hướng để xác định cơ hội và xây dựng định hướng phù hợp với mục tiêu kinh doanh.
 
-### 02 — Content Creation
+### 02 - Content Creation
 
 Hỗ trợ xây dựng bài viết, hình ảnh, video, kịch bản và nội dung đa nền tảng theo định hướng và nhận diện thương hiệu.
 
-### 03 — Website & Landing Page
+### 03 - Website & Landing Page
 
 Nếu doanh nghiệp chưa có website, ViralMinds có thể hỗ trợ xây dựng website hoặc landing page phù hợp với thương hiệu, sản phẩm và mục tiêu kinh doanh.
 
 Website trở thành nền tảng để doanh nghiệp triển khai nội dung, SEO, AEO, thu thập dữ liệu khách hàng và phát triển Marketing dài hạn.
 
-### 04 — SEO
+### 04 - SEO
 
 Hỗ trợ tối ưu website, cấu trúc nội dung và hệ thống từ khóa để tăng khả năng xuất hiện trên các công cụ tìm kiếm và tiếp cận khách hàng tự nhiên.
 
-### 05 — AEO
+### 05 - AEO
 
-**Answer Engine Optimization** — tối ưu thông tin và nội dung để thương hiệu dễ được các hệ thống AI và Answer Engine hiểu, lựa chọn và đề cập khi người dùng tìm kiếm thông tin liên quan.
+**Answer Engine Optimization** - tối ưu thông tin và nội dung để thương hiệu dễ được các hệ thống AI và Answer Engine hiểu, lựa chọn và đề cập khi người dùng tìm kiếm thông tin liên quan.
 
-### 06 — Distribution
+### 06 - Distribution
 
 Lập kế hoạch, quản lý lịch và hỗ trợ phân phối nội dung trên các nền tảng phù hợp.
 
-### 07 — Paid Ads
+### 07 - Paid Ads
 
 Hỗ trợ xây dựng kế hoạch quảng cáo, phân bổ ngân sách, phát triển creative và theo dõi hiệu quả chiến dịch.
 
-### 08 — Analytics
+### 08 - Analytics
 
 Tổng hợp dữ liệu, theo dõi KPI và đưa ra đề xuất để cải thiện hiệu quả Marketing.
 
-### 09 — Community & CRM
+### 09 - Community & CRM
 
 Hỗ trợ quản lý tương tác, phản hồi khách hàng, thu thập dữ liệu và xây dựng quy trình chăm sóc khách hàng.
 
@@ -109,23 +109,23 @@ Hỗ trợ quản lý tương tác, phản hồi khách hàng, thu thập dữ l
 
 ## Từ mục tiêu kinh doanh đến một quy trình Marketing có thể vận hành
 
-### 01 — Hiểu doanh nghiệp
+### 01 - Hiểu doanh nghiệp
 
 ViralMinds tiếp nhận thông tin về sản phẩm, thương hiệu, khách hàng, mục tiêu, dữ liệu và quy trình Marketing hiện tại.
 
-### 02 — Xác định công việc
+### 02 - Xác định công việc
 
 Từ mục tiêu được giao, hệ thống xác định những công việc và chuyên môn cần tham gia.
 
-### 03 — Phối hợp các AI Specialist
+### 03 - Phối hợp các AI Specialist
 
 Các AI chuyên môn thực hiện từng phần công việc và sử dụng kết quả từ những bước trước để tiếp tục xử lý.
 
-### 04 — Doanh nghiệp kiểm soát
+### 04 - Doanh nghiệp kiểm soát
 
 Doanh nghiệp có thể xem xét, điều chỉnh và phê duyệt trước những bước quan trọng như xuất bản nội dung hoặc triển khai quảng cáo.
 
-### 05 — Đo lường & tối ưu
+### 05 - Đo lường & tối ưu
 
 Dữ liệu từ quá trình vận hành được tổng hợp để đánh giá hiệu quả và hỗ trợ đưa ra quyết định cho các hoạt động tiếp theo.
 
@@ -200,7 +200,7 @@ Hành vi tìm kiếm đang thay đổi.
 
 Bên cạnh Search Engine truyền thống, khách hàng ngày càng sử dụng các công cụ AI để tìm kiếm thông tin, so sánh sản phẩm và đưa ra quyết định.
 
-Điều này tạo ra một cách tiếp cận mới bên cạnh SEO truyền thống: **AEO — Answer Engine Optimization.**
+Điều này tạo ra một cách tiếp cận mới bên cạnh SEO truyền thống: **AEO - Answer Engine Optimization.**
 
 ViralMinds giúp doanh nghiệp không chỉ tối ưu cho cách khách hàng tìm kiếm **hôm nay**, mà còn chuẩn bị cho cách khách hàng tìm kiếm **trong tương lai**.
 
@@ -247,14 +247,14 @@ ViralMinds tập trung vào việc **tối ưu toàn bộ cách doanh nghiệp v
 |                                             | Công cụ AI | Freelancer / Agency | ViralMinds |
 | ------------------------------------------- | ---------- | ------------------- | ---------- |
 | Hỗ trợ từng tác vụ                          | ✓          | ✓                   | ✓          |
-| Kết nối nhiều công đoạn                     | —          | ✓                   | ✓          |
-| AI chuyên môn hóa                           | ✓          | —                   | ✓          |
+| Kết nối nhiều công đoạn                     | -          | ✓                   | ✓          |
+| AI chuyên môn hóa                           | ✓          | -                   | ✓          |
 | Tùy chỉnh theo doanh nghiệp                 | Hạn chế    | ✓                   | ✓          |
-| Phối hợp nhiều AI trong một quy trình       | —          | —                   | ✓          |
-| **Tiết kiệm thời gian vận hành**            | ✓          | —                   | **✓**      |
-| **Giảm nhu cầu nhân sự cho tác vụ lặp lại** | Hạn chế    | —                   | **✓**      |
-| **Tối ưu chi phí vận hành Marketing**       | Hạn chế    | —                   | **✓**      |
-| **Chuẩn bị cho AI Search / AEO**            | —          | Hạn chế             | **✓**      |
+| Phối hợp nhiều AI trong một quy trình       | -          | -                   | ✓          |
+| **Tiết kiệm thời gian vận hành**            | ✓          | -                   | **✓**      |
+| **Giảm nhu cầu nhân sự cho tác vụ lặp lại** | Hạn chế    | -                   | **✓**      |
+| **Tối ưu chi phí vận hành Marketing**       | Hạn chế    | -                   | **✓**      |
+| **Chuẩn bị cho AI Search / AEO**            | -          | Hạn chế             | **✓**      |
 
 ### 3 giá trị ViralMinds mang lại
 
@@ -304,17 +304,17 @@ Dữ liệu được tổng hợp thành báo cáo và đề xuất những vi�
 
 ## Bắt đầu xây dựng AI Workforce cho doanh nghiệp
 
-### 01 — Consulting
+### 01 - Consulting
 
 ViralMinds tìm hiểu mô hình kinh doanh, mục tiêu và quy trình Digital Marketing hiện tại của doanh nghiệp.
 
 Từ đó xác định những công việc có thể ứng dụng AI và đề xuất mô hình AI Workforce phù hợp.
 
-### 02 — Setup
+### 02 - Setup
 
 Sau khi thống nhất phương án, ViralMinds tiến hành cấu hình AI Specialist, thiết lập quy trình, kết nối dữ liệu, kiểm thử và chuyển giao hệ thống.
 
-### 03 — Vận hành & tối ưu
+### 03 - Vận hành & tối ưu
 
 Trong quá trình sử dụng, hệ thống có thể tiếp tục được điều chỉnh và mở rộng khi nhu cầu kinh doanh thay đổi.
 
@@ -447,6 +447,6 @@ Facebook / TikTok / Zalo / Website / Khác
 
 ### **AI không thiếu. Điều doanh nghiệp cần là một AI Workforce biết cách làm việc cùng nhau.**
 
-**ViralMinds — AI Workforce cho Digital Marketing.**
+**ViralMinds - AI Workforce cho Digital Marketing.**
 
 Từ **Website → SEO → AEO → Content → Ads → Analytics → CRM**, ViralMinds giúp doanh nghiệp xây dựng một hệ thống Marketing có thể **vận hành, mở rộng và thích nghi cùng sự phát triển của AI**.

@@ -34,7 +34,7 @@ const solutions = [
     number: "05",
     icon: Zap,
     title: "AEO",
-    desc: "Answer Engine Optimization — tối ưu thông tin và nội dung để thương hiệu dễ được các hệ thống AI và Answer Engine hiểu, lựa chọn và đề cập.",
+    desc: "Answer Engine Optimization - tối ưu thông tin và nội dung để thương hiệu dễ được các hệ thống AI và Answer Engine hiểu, lựa chọn và đề cập.",
     color: "viral-text",
   },
   {
@@ -71,13 +71,13 @@ export default function Solutions() {
   return (
     <section id="solutions" className="relative py-20 md:py-28 lg:py-32">
       <div className="absolute inset-0 grid-bg noise-bg opacity-50" aria-hidden="true" />
-      
+
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <span className="section-label">Giải pháp</span>
           <h2 className="section-title">Từ xây dựng nền tảng đến vận hành và tối ưu Digital Marketing</h2>
           <p className="section-subtitle mt-4">
-            ViralMinds hỗ trợ toàn bộ vòng đời Digital Marketing — từ research, content, website, SEO, AEO, distribution, ads, analytics đến CRM.
+            ViralMinds hỗ trợ toàn bộ vòng đời Digital Marketing - từ research, content, website, SEO, AEO, distribution, ads, analytics đến CRM.
           </p>
         </div>
 
@@ -92,14 +92,14 @@ export default function Solutions() {
               transition={{ delay: index * 0.06, duration: 0.5 }}
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-viral-border group-hover:bg-viral-accent transition-colors duration-300" />
-              
+
               <div className="flex items-baseline gap-3 mb-4">
                 <span className="font-display text-heading-lg text-viral-text-subtle font-bold">{solution.number}</span>
                 <div className="w-10 h-10 rounded-card-md bg-viral-accent/10 border border-viral-accent/20 flex items-center justify-center">
                   <solution.icon className="w-5 h-5 text-viral-accent" aria-hidden="true" />
                 </div>
               </div>
-              
+
               <h3 className="font-display heading-md text-viral-text mb-3">{solution.title}</h3>
               <p className="font-body body-md text-viral-text-muted">{solution.desc}</p>
             </motion.article>

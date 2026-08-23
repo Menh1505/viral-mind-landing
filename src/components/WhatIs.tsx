@@ -15,12 +15,12 @@ const features = [
   {
     icon: Layers,
     title: "Quy trình thống nhất",
-    desc: "Từ mục tiêu kinh doanh đến lịch đăng, bài viết, ads, báo cáo — tất cả trong một pipeline.",
+    desc: "Từ mục tiêu kinh doanh đến lịch đăng, bài viết, ads, báo cáo - tất cả trong một pipeline.",
   },
   {
     icon: Cpu,
     title: "Tùy chỉnh theo doanh nghiệp",
-    desc: "Học brand knowledge, khu vực, giọng điệu, lịch sử cái gì ra đơn — không dùng cấu hình chung.",
+    desc: "Học brand knowledge, khu vực, giọng điệu, lịch sử cái gì ra đơn - không dùng cấu hình chung.",
   },
   {
     icon: Bot,
@@ -39,7 +39,7 @@ export default function WhatIs() {
     <section id="what-is" className="relative py-20 md:py-28 lg:py-32">
       <div className="absolute inset-0 grid-bg noise-bg opacity-50" aria-hidden="true" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-viral-accent/5 via-transparent to-transparent" aria-hidden="true" />
-      
+
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>

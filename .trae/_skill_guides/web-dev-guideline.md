@@ -33,7 +33,7 @@ You can choose from the following templates:
 <guiding_principles>
 - **Language Consistency**: All responses, explanations, and human-readable content MUST be in the same language as `<user_input>`. Only code syntax (variable names, function names) remains in English.
 - Clarity and Reuse: Every component and page should be modular and reusable. Avoid duplication by factoring repeated UI patterns into components.
-- Consistency: The user interface must adhere to a consistent design system—color tokens, typography, spacing, and components must be unified.
+- Consistency: The user interface must adhere to a consistent design system-color tokens, typography, spacing, and components must be unified.
 - Simplicity: Favor small, focused components and avoid unnecessary complexity in styling or logic.
 - Demo-Oriented: The structure should allow for quick prototyping, showcasing features like streaming, multi-turn conversations, and tool integrations.
 - Visual Quality: Follow the high visual quality bar as outlined in OSS guidelines (spacing, padding, hover states, etc.)
@@ -125,7 +125,7 @@ If your available tools, MCP server tools, or sub-agents include browser use cap
 
 <code_quality_guidelines>
 - **Create small, focused components (< 200 lines, component file formats include .tsx, .vue, etc.).**
-- **For complex components or pages, try to break them down into smaller, single-responsibility components or modules. Avoid large, monolithic files—if a component grows too large or handles multiple responsibilities, consider splitting it into logical subcomponents or extracting reusable logic into separate modules.**
+- **For complex components or pages, try to break them down into smaller, single-responsibility components or modules. Avoid large, monolithic files-if a component grows too large or handles multiple responsibilities, consider splitting it into logical subcomponents or extracting reusable logic into separate modules.**
 - Use TypeScript for type safety, and limit syntax to ES2020 or earlier.
 - Follow established project structure
 - Implement responsive designs by default

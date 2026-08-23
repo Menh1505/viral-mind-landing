@@ -6,7 +6,7 @@ export default function Thanks() {
   return (
     <div className="min-h-screen bg-viral-bg text-viral-text font-body flex items-center justify-center px-4">
       <div className="absolute inset-0 grid-bg noise-bg opacity-50" aria-hidden="true" />
-      
+
       <motion.div
         className="relative z-10 max-w-md w-full text-center glass-panel rounded-card-xl p-8 md:p-12"
         initial={{ opacity: 0, y: 24 }}
@@ -70,7 +70,7 @@ export default function Thanks() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          ViralMinds — AI Workforce cho Digital Marketing
+          ViralMinds - AI Workforce cho Digital Marketing
         </motion.p>
       </motion.div>
     </div>
