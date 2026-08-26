@@ -874,13 +874,13 @@ export default function Home() {
       </section>
 
       {/* Premium Tech Grid: Deployment Model & Pricing */}
-      <section id="pricing" className="py-28 relative overflow-hidden">
+      <section id="pricing" className="py-16 sm:py-24 lg:py-28 relative overflow-hidden">
         {/* Background Ambient Glows */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[400px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
         <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" aria-hidden="true" />
 
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* 1. Left Column (Text & Minimalist Glass Feature Cards) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -890,26 +890,26 @@ export default function Home() {
               className="lg:col-span-6 flex flex-col justify-center"
             >
               {/* Tier 1: Sub-heading / Eyebrow (Small, Amber-Gold) */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase font-semibold text-amber-300 bg-amber-500/10 border border-amber-400/30 shadow-[0_0_16px_rgba(245,158,11,0.2)] mb-5 w-fit">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase font-semibold text-amber-300 bg-amber-500/10 border border-amber-400/30 shadow-[0_0_16px_rgba(245,158,11,0.2)] mb-4 sm:mb-5 w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shadow-[0_0_6px_#f59e0b]" />
                 MÔ HÌNH TRIỂN KHAI & CHI PHÍ
               </div>
 
               {/* Tier 2: Main Heading (Large, Bold, High Aesthetic Hierarchy) */}
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-[1.18]">
-                May đo theo quy mô, <br />
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-[1.2] sm:leading-[1.18]">
+                May đo theo quy mô, <br className="hidden sm:inline" />
                 <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-amber-400 bg-clip-text text-transparent">
                   tối ưu theo kết quả thực tế
                 </span>
               </h2>
 
               {/* Tier 3: Description Paragraph */}
-              <p className="text-zinc-300/90 text-sm sm:text-base leading-relaxed mt-5 max-w-xl">
+              <p className="text-zinc-300/90 text-sm sm:text-base leading-relaxed mt-4 sm:mt-5 max-w-xl">
                 Không áp đặt các gói cố định cồng kềnh. Sau khi khảo sát mục tiêu và luồng dữ liệu, ViralMinds thiết kế cấu trúc AI Workforce tinh gọn với ngân sách tối ưu hóa theo giá trị doanh thu thực tế.
               </p>
 
               {/* 3 Synchronized Emerald Cut Minimalist Feature Cards */}
-              <div className="grid sm:grid-cols-3 gap-3.5 mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-3.5 mt-6 sm:mt-8">
                 {[
                   {
                     step: "01",
@@ -958,12 +958,12 @@ export default function Home() {
 
                         {/* Inner Body */}
                         <div
-                          className="relative p-5 h-full flex flex-col justify-between bg-[rgba(16,11,24,0.92)] backdrop-blur-2xl overflow-hidden min-h-[160px]"
+                          className="relative p-4 sm:p-5 h-full flex flex-col justify-between bg-[rgba(16,11,24,0.92)] backdrop-blur-2xl overflow-hidden min-h-[135px] sm:min-h-[160px]"
                           style={{ clipPath: EMERALD_CUT_PATH }}
                         >
                           {/* Sunken Large Watermark - Shifted left to avoid cut corner */}
                           <span
-                            className="absolute bottom-0 right-4 sm:right-5 text-5xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-300 text-amber-500/[0.08] group-hover:text-amber-400/[0.2]"
+                            className="absolute bottom-0 right-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-300 text-amber-500/[0.08] group-hover:text-amber-400/[0.2]"
                             aria-hidden="true"
                           >
                             {item.step}
@@ -971,14 +971,14 @@ export default function Home() {
 
                           <div className="relative z-10">
                             {/* Seamless Large Monoline Icon */}
-                            <div className="text-amber-400 group-hover:text-amber-300 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_14px_rgba(245,158,11,0.7)] mb-3">
-                              <Icon className="w-7 h-7 stroke-[1.25]" />
+                            <div className="text-amber-400 group-hover:text-amber-300 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_14px_rgba(245,158,11,0.7)] mb-2.5 sm:mb-3">
+                              <Icon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.25]" />
                             </div>
 
                             <h4 className="font-display text-sm font-bold text-white group-hover:text-amber-200 transition-colors">
                               {item.title}
                             </h4>
-                            <p className="text-[11px] text-zinc-400 leading-snug mt-1.5">
+                            <p className="text-[11px] text-zinc-400 leading-snug mt-1 sm:mt-1.5">
                               {item.desc}
                             </p>
                           </div>
@@ -990,10 +990,10 @@ export default function Home() {
               </div>
 
               {/* CTA Action Area */}
-              <div className="mt-9 flex flex-wrap items-center gap-5">
+              <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-5">
                 <a
                   href="#contact"
-                  className="relative group px-9 py-4 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 font-display text-sm font-bold text-black tracking-wide uppercase transition-all duration-300 hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center gap-3 border border-amber-300/40"
+                  className="relative group w-full sm:w-auto px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 font-display text-xs sm:text-sm font-bold text-black tracking-wide uppercase transition-all duration-300 hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:scale-[1.03] active:scale-[0.98] flex items-center justify-center gap-3 border border-amber-300/40"
                 >
                   <span className="relative z-10">ĐẶT LỊCH TƯ VẤN</span>
                   <ArrowRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform relative z-10" />
@@ -1002,7 +1002,7 @@ export default function Home() {
 
                 <Link
                   to="/details/pricing"
-                  className="font-mono text-xs tracking-wider uppercase text-zinc-400 hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="font-mono text-xs tracking-wider uppercase text-zinc-400 hover:text-amber-300 transition-colors flex items-center justify-center sm:justify-start gap-1.5 py-1"
                 >
                   <span>Xem mô hình chi phí chi tiết</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-amber-400" />
@@ -1016,7 +1016,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-6 relative"
+              className="lg:col-span-6 relative mt-4 lg:mt-0"
             >
               {/* Dashboard Outer Luxury Aura */}
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-purple-600/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
@@ -1027,8 +1027,8 @@ export default function Home() {
                 style={{ clipPath: EMERALD_CUT_PATH }}
               >
                 {/* Top-Left Main Steel Armor Bracket */}
-                <div className="absolute top-0 left-0 w-8 h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                  <svg className="w-8 h-8 overflow-visible" viewBox="0 0 32 32">
+                <div className="absolute top-0 left-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 overflow-visible" viewBox="0 0 32 32">
                     <polygon points="0,16 16,0 20,0 0,20" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                     <line x1="0" y1="16" x2="16" y2="0" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
                     <circle cx="8.5" cy="8.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -1036,8 +1036,8 @@ export default function Home() {
                 </div>
 
                 {/* Bottom-Right Main Steel Armor Bracket */}
-                <div className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                  <svg className="w-8 h-8 overflow-visible" viewBox="0 0 32 32">
+                <div className="absolute bottom-0 right-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 overflow-visible" viewBox="0 0 32 32">
                     <polygon points="32,16 16,32 12,32 32,12" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                     <line x1="32" y1="16" x2="16" y2="32" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
                     <circle cx="23.5" cy="23.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -1046,31 +1046,31 @@ export default function Home() {
 
                 {/* Dashboard Inner Body */}
                 <div
-                  className="relative bg-[rgba(15,10,24,0.94)] backdrop-blur-2xl p-6 sm:p-7 overflow-hidden"
+                  className="relative bg-[rgba(15,10,24,0.94)] backdrop-blur-2xl p-4 sm:p-6 lg:p-7 overflow-hidden"
                   style={{ clipPath: EMERALD_CUT_PATH }}
                 >
                   {/* Subtle Grid Background */}
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,#f59e0b08_1px,transparent_1px),linear-gradient(to_bottom,#f59e0b08_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                   {/* Header Bar */}
-                  <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pb-5 mb-5 border-b border-white/10">
+                  <div className="relative z-10 flex flex-wrap items-center justify-between gap-2.5 pb-3.5 sm:pb-5 mb-3.5 sm:mb-5 border-b border-white/10">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
                       <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                      <span className="ml-2 font-mono text-[11px] text-zinc-400 tracking-wider hidden sm:inline">
+                      <span className="ml-1.5 font-mono text-[10px] sm:text-[11px] text-zinc-400 tracking-wider">
                         AI_SIMULATOR_v2.4
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[10px]">
+                    <div className="flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[9px] sm:text-[10px]">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_#10b981]" />
                       LIVE TELEMETRY
                     </div>
                   </div>
 
                   {/* Interactive Scale Segmented Tabs */}
-                  <div className="relative z-10 mb-5 p-1 rounded-xl bg-black/50 border border-white/10 flex items-center gap-1">
+                  <div className="relative z-10 mb-3.5 sm:mb-5 p-1 rounded-xl bg-black/50 border border-white/10 flex items-center gap-1">
                     {(["sme", "growth", "enterprise"] as const).map((scaleKey) => {
                       const isActive = dashboardScale === scaleKey;
                       const preset = dashboardPresets[scaleKey];
@@ -1078,7 +1078,7 @@ export default function Home() {
                         <button
                           key={scaleKey}
                           onClick={() => setDashboardScale(scaleKey)}
-                          className={`flex-1 py-2 px-2.5 rounded-lg text-xs font-mono font-medium transition-all duration-300 relative text-center flex items-center justify-center gap-1.5 ${
+                          className={`flex-1 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-lg text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 relative text-center flex items-center justify-center gap-1 ${
                             isActive
                               ? "text-black font-bold shadow-[0_0_20px_rgba(245,158,11,0.5)]"
                               : "text-zinc-400 hover:text-zinc-200 hover:bg-white/5"
@@ -1091,7 +1091,7 @@ export default function Home() {
                               transition={{ type: "spring", stiffness: 400, damping: 30 }}
                             />
                           )}
-                          <span className="relative z-10 tracking-wider">
+                          <span className="relative z-10 tracking-wider truncate">
                             {preset.name}
                           </span>
                         </button>
@@ -1100,7 +1100,7 @@ export default function Home() {
                   </div>
 
                   {/* Dashboard Metrics Grid (2x2 Interactive Emerald Cut Widgets) */}
-                  <div className="relative z-10 grid grid-cols-2 gap-3.5 mb-4">
+                  <div className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3.5 mb-3.5 sm:mb-4">
                     {dashboardPresets[dashboardScale].metrics.map((metric, idx) => {
                       const isInspected = activeInspector === idx;
                       return (
@@ -1116,7 +1116,7 @@ export default function Home() {
                           style={{ clipPath: EMERALD_CUT_PATH }}
                         >
                           <div
-                            className={`p-4 sm:p-5 relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300 ${
+                            className={`p-3 sm:p-4 lg:p-5 relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300 min-h-[140px] sm:min-h-[155px] ${
                               isInspected
                                 ? "bg-[rgba(24,15,36,0.96)] backdrop-blur-2xl"
                                 : "bg-[rgba(18,12,28,0.92)] backdrop-blur-xl"
@@ -1124,17 +1124,17 @@ export default function Home() {
                             style={{ clipPath: EMERALD_CUT_PATH }}
                           >
                             {/* Sunken Watermark */}
-                            <span className="absolute bottom-1 right-5 sm:right-6 text-4xl font-mono font-black text-amber-500/[0.07] pointer-events-none select-none">
+                            <span className="absolute bottom-1 right-3 sm:right-5 text-3xl sm:text-4xl font-mono font-black text-amber-500/[0.07] pointer-events-none select-none">
                               {metric.code}
                             </span>
 
                             <div className="relative z-10">
-                              <div className="flex items-center justify-between mb-1.5">
-                                <span className="font-mono text-[9px] sm:text-[10px] text-amber-400/90 uppercase tracking-wider">
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="font-mono text-[8.5px] sm:text-[10px] text-amber-400/90 uppercase tracking-wider truncate pr-1">
                                   {metric.label}
                                 </span>
                                 {isInspected && (
-                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping shrink-0" />
                                 )}
                               </div>
 
@@ -1145,28 +1145,28 @@ export default function Home() {
                                   animate={{ opacity: 1, y: 0 }}
                                   exit={{ opacity: 0, y: -6 }}
                                   transition={{ duration: 0.25 }}
-                                  className="font-mono text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-baseline gap-1"
+                                  className="font-mono text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white flex flex-wrap items-baseline gap-1"
                                 >
                                   <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-amber-400 bg-clip-text text-transparent">
                                     {metric.value}
                                   </span>
-                                  <span className="text-[10px] font-mono text-emerald-400 font-semibold">
+                                  <span className="text-[9px] sm:text-[10px] font-mono text-emerald-400 font-semibold">
                                     {metric.sub}
                                   </span>
                                 </motion.div>
                               </AnimatePresence>
 
-                              <p className="text-[10px] sm:text-[11px] text-zinc-400 mt-2 leading-relaxed line-clamp-2">
+                              <p className="text-[9.5px] sm:text-[11px] text-zinc-400 mt-1.5 sm:mt-2 leading-relaxed line-clamp-2">
                                 {metric.desc}
                               </p>
                             </div>
 
                             {/* Mini Reactive Sparkline Waveform */}
-                            <div className="mt-3 pt-2 border-t border-white/5 flex items-center justify-between">
-                              <span className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
+                            <div className="mt-2.5 pt-1.5 border-t border-white/5 flex items-center justify-between">
+                              <span className="text-[8.5px] sm:text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
                                 NODE_{metric.code}
                               </span>
-                              <svg className="w-14 h-4 overflow-visible" viewBox="0 0 60 16">
+                              <svg className="w-11 sm:w-14 h-3.5 sm:h-4 overflow-visible" viewBox="0 0 60 16">
                                 <polyline
                                   fill="none"
                                   stroke={isInspected ? "#f59e0b" : "rgba(245,158,11,0.4)"}
@@ -1187,10 +1187,10 @@ export default function Home() {
                   </div>
 
                   {/* Bottom Live Interactive Diagnostic Terminal Bar */}
-                  <div className="relative z-10 p-3.5 rounded-xl bg-black/60 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-2 font-mono text-xs text-zinc-400">
-                    <div className="flex items-center gap-2 overflow-hidden">
+                  <div className="relative z-10 p-2.5 sm:p-3.5 rounded-xl bg-black/60 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-xs text-zinc-400">
+                    <div className="flex items-center gap-2 overflow-hidden min-w-0">
                       <div className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] shrink-0" />
-                      <span className="text-amber-300 font-semibold text-[11px] shrink-0">DIAGNOSTIC:</span>
+                      <span className="text-amber-300 font-semibold text-[10px] sm:text-[11px] shrink-0">DIAGNOSTIC:</span>
                       <AnimatePresence mode="wait">
                         <motion.span
                           key={dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
@@ -1198,13 +1198,13 @@ export default function Home() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -8 }}
                           transition={{ duration: 0.2 }}
-                          className="text-zinc-300 text-[11px] truncate"
+                          className="text-zinc-300 text-[10px] sm:text-[11px] truncate"
                         >
                           {dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
                         </motion.span>
                       </AnimatePresence>
                     </div>
-                    <span className="text-[10px] text-zinc-500 shrink-0 uppercase tracking-widest hidden md:inline">
+                    <span className="text-[9px] sm:text-[10px] text-zinc-500 shrink-0 uppercase tracking-widest hidden md:inline">
                       {dashboardPresets[dashboardScale].badge}
                     </span>
                   </div>
