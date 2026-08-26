@@ -277,7 +277,7 @@ export default function Home() {
               <Sparkles className="w-3.5 h-3.5 mr-2 text-amber-300 shrink-0" />
               HỆ THỐNG ĐỘI NGŨ AI TINH GỌN CHO CHIẾN LƯỢC DIGITAL MARKETING
             </span>
-            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-display-xl mt-4 sm:mt-5 mb-5 sm:mb-6 text-white leading-[1.18] sm:leading-[1.12] lg:leading-[1.08] tracking-tight">
+            <h1 className="font-display font-bold text-2xl sm:text-4xl md:text-5xl lg:text-display-xl mt-4 sm:mt-5 mb-5 sm:mb-6 text-white leading-[1.18] sm:leading-[1.12] lg:leading-[1.08] tracking-tight">
               <ScrambleText text="KIẾN TẠO TĂNG TRƯỞNG VƯỢT BẬC " delay={150} duration={1100} />
               <ScrambleText text="VỚI SỨC MẠNH AI CHUYÊN BIỆT." className="text-gradient-accent inline" delay={650} duration={1200} />
             </h1>
@@ -325,11 +325,13 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
             <span className="section-label">ViralMinds giúp bạn làm những gì?</span>
             <h2 className="section-title">Mỗi bài toán Marketing được phụ trách bởi một nhóm AI Specialist phù hợp.</h2>
           </div>
-          <div className="capability-system relative max-w-5xl mx-auto border-0 shadow-none overflow-visible">
+
+          {/* Desktop View: Orbital Planetary System */}
+          <div className="hidden lg:block capability-system relative max-w-5xl mx-auto border-0 shadow-none overflow-visible">
             <div className="capability-map border-0 overflow-visible" role="group" aria-label="Các nhóm AI Specialist">
               {/* Expansive Ambient Halo Aura */}
               <div className="capability-aura" aria-hidden="true" />
@@ -377,6 +379,71 @@ export default function Home() {
                       <span className="capability-node-sub">Specialist 0{i + 1}</span>
                     </div>
                     <ArrowRight className="w-3.5 h-3.5 ml-auto opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-amber-400 transition-all duration-200 shrink-0" />
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile & Tablet View: Dedicated AI Command Center Grid */}
+          <div className="lg:hidden space-y-4 max-w-2xl mx-auto">
+            {/* AI Orchestration Central Header Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="relative overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-b from-amber-500/15 via-purple-950/40 to-[#0d0b1c]/90 p-5 text-center shadow-[0_0_35px_rgba(245,158,11,0.12)] backdrop-blur-xl"
+            >
+              <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-48 h-24 bg-amber-500/20 blur-2xl rounded-full pointer-events-none" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-[10px] font-mono font-semibold tracking-wider uppercase mb-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                HỆ THỐNG ĐIỀU PHỐI AI TẬP TRUNG
+              </div>
+              <h3 className="font-display text-xl font-bold text-white tracking-tight">
+                ViralMinds AI Workforce
+              </h3>
+              <p className="text-xs text-purple-200/80 mt-1.5 max-w-md mx-auto leading-relaxed">
+                6 nhóm AI Specialist phối hợp liền mạch. Chạm vào từng bộ phận để khám phá bài toán & phương án xử lý.
+              </p>
+            </motion.div>
+
+            {/* 6 AI Specialists Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              {capabilities.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.button
+                    key={item.slug}
+                    type="button"
+                    onClick={() => setActive(i)}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.45, delay: i * 0.05 }}
+                    className="group relative flex items-center justify-between p-4 rounded-2xl border border-white/10 bg-gradient-to-r from-purple-950/40 to-slate-950/70 backdrop-blur-md text-left transition-all duration-300 active:scale-[0.98] hover:border-amber-400/40 hover:from-amber-500/10 shadow-lg"
+                  >
+                    <div className="flex items-center gap-3.5 min-w-0 pr-2">
+                      <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-300 shadow-[0_0_16px_rgba(245,158,11,0.2)] shrink-0 group-hover:scale-105 group-hover:bg-amber-500/20 transition-all">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[10px] font-mono text-amber-400/90 font-bold uppercase tracking-wider">
+                            Specialist 0{i + 1}
+                          </span>
+                        </div>
+                        <h4 className="font-display text-sm font-bold text-white group-hover:text-amber-200 transition-colors truncate">
+                          {item.title}
+                        </h4>
+                        <p className="text-[11px] text-zinc-400 truncate mt-0.5 max-w-[190px] sm:max-w-[200px]">
+                          {item.actions[0]}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-amber-300 group-hover:border-amber-400/40 group-hover:bg-amber-500/15 transition-all shrink-0">
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
                   </motion.button>
                 );
               })}
