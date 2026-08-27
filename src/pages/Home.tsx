@@ -113,7 +113,7 @@ const valuePillars = [
 
 const dashboardPresets = {
   sme: {
-    name: "SME / Khởi nghiệp",
+    name: "SME / Startup",
     badge: "TIẾT KIỆM TỐI ĐA",
     metrics: [
       {
@@ -874,20 +874,20 @@ export default function Home() {
       </section>
 
       {/* Premium Tech Grid: Deployment Model & Pricing */}
-      <section id="pricing" className="py-16 sm:py-24 lg:py-28 relative overflow-hidden">
+      <section id="pricing" className="py-16 sm:py-24 lg:py-28 relative overflow-hidden max-w-full">
         {/* Background Ambient Glows */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[400px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none" aria-hidden="true" />
         <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" aria-hidden="true" />
 
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="container relative z-10 max-w-full overflow-hidden sm:overflow-visible">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* 1. Left Column (Text & Minimalist Glass Feature Cards) */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-6 flex flex-col justify-center"
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 flex flex-col justify-center min-w-0"
             >
               {/* Tier 1: Sub-heading / Eyebrow (Small, Amber-Gold) */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase font-semibold text-amber-300 bg-amber-500/10 border border-amber-400/30 shadow-[0_0_16px_rgba(245,158,11,0.2)] mb-4 sm:mb-5 w-fit">
@@ -932,15 +932,15 @@ export default function Home() {
                 ].map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <div key={item.step} className="group relative transition-all duration-300 hover:scale-[1.02]">
+                    <div key={item.step} className="group relative transition-all duration-300 hover:scale-[1.02] min-w-0">
                       {/* Outer Emerald Cut Border */}
                       <div
                         className="p-[1px] h-full transition-all duration-500 relative bg-gradient-to-br from-amber-500/30 via-zinc-700/40 to-purple-900/30 group-hover:from-amber-400 group-hover:via-amber-500 group-hover:to-orange-500 group-hover:shadow-[0_16px_35px_-10px_rgba(245,158,11,0.4)]"
                         style={{ clipPath: EMERALD_CUT_PATH }}
                       >
                         {/* Top-Left Steel Armor Bracket */}
-                        <div className="absolute top-0 left-0 w-6 h-6 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                          <svg className="w-6 h-6 overflow-visible" viewBox="0 0 32 32">
+                        <div className="absolute top-0 left-0 w-6 h-6 pointer-events-none z-30 overflow-hidden" aria-hidden="true">
+                          <svg className="w-6 h-6" viewBox="0 0 32 32">
                             <polygon points="0,16 16,0 20,0 0,20" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                             <line x1="0" y1="16" x2="16" y2="0" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" />
                             <circle cx="8.5" cy="8.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -948,8 +948,8 @@ export default function Home() {
                         </div>
 
                         {/* Bottom-Right Steel Armor Bracket */}
-                        <div className="absolute bottom-0 right-0 w-6 h-6 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                          <svg className="w-6 h-6 overflow-visible" viewBox="0 0 32 32">
+                        <div className="absolute bottom-0 right-0 w-6 h-6 pointer-events-none z-30 overflow-hidden" aria-hidden="true">
+                          <svg className="w-6 h-6" viewBox="0 0 32 32">
                             <polygon points="32,16 16,32 12,32 32,12" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                             <line x1="32" y1="16" x2="16" y2="32" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" />
                             <circle cx="23.5" cy="23.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -961,7 +961,7 @@ export default function Home() {
                           className="relative p-4 sm:p-5 h-full flex flex-col justify-between bg-[rgba(16,11,24,0.92)] backdrop-blur-2xl overflow-hidden min-h-[135px] sm:min-h-[160px]"
                           style={{ clipPath: EMERALD_CUT_PATH }}
                         >
-                          {/* Sunken Large Watermark - Shifted left to avoid cut corner */}
+                          {/* Sunken Large Watermark */}
                           <span
                             className="absolute bottom-0 right-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black pointer-events-none select-none tracking-tighter transition-all duration-300 text-amber-500/[0.08] group-hover:text-amber-400/[0.2]"
                             aria-hidden="true"
@@ -1012,23 +1012,23 @@ export default function Home() {
 
             {/* 2. Right Column (Fully Interactive Emerald Cut Dashboard Mockup) */}
             <motion.div
-              initial={{ opacity: 0, x: 30, y: 10 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-6 relative mt-4 lg:mt-0"
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 relative mt-4 lg:mt-0 w-full max-w-full overflow-hidden"
             >
               {/* Dashboard Outer Luxury Aura */}
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-orange-500/15 to-purple-600/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
               {/* Dashboard Outer Emerald Cut Layer */}
               <div
-                className="p-[1px] relative bg-gradient-to-br from-amber-500/40 via-zinc-700/50 to-purple-900/40 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_50px_rgba(245,158,11,0.15)]"
+                className="p-[1px] relative bg-gradient-to-br from-amber-500/40 via-zinc-700/50 to-purple-900/40 shadow-[0_30px_90px_-20px_rgba(0,0,0,0.95),0_0_50px_rgba(245,158,11,0.15)] w-full max-w-full"
                 style={{ clipPath: EMERALD_CUT_PATH }}
               >
                 {/* Top-Left Main Steel Armor Bracket */}
-                <div className="absolute top-0 left-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 overflow-visible" viewBox="0 0 32 32">
+                <div className="absolute top-0 left-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-hidden" aria-hidden="true">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 32 32">
                     <polygon points="0,16 16,0 20,0 0,20" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                     <line x1="0" y1="16" x2="16" y2="0" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
                     <circle cx="8.5" cy="8.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -1036,8 +1036,8 @@ export default function Home() {
                 </div>
 
                 {/* Bottom-Right Main Steel Armor Bracket */}
-                <div className="absolute bottom-0 right-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-visible" aria-hidden="true">
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 overflow-visible" viewBox="0 0 32 32">
+                <div className="absolute bottom-0 right-0 w-7 h-7 sm:w-8 sm:h-8 pointer-events-none z-30 overflow-hidden" aria-hidden="true">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8" viewBox="0 0 32 32">
                     <polygon points="32,16 16,32 12,32 32,12" fill="#2d1b38" stroke="#f59e0b" strokeWidth="0.75" />
                     <line x1="32" y1="16" x2="16" y2="32" stroke="#fbbf24" strokeWidth="2.5" strokeLinecap="round" className="drop-shadow-[0_0_6px_rgba(245,158,11,0.9)]" />
                     <circle cx="23.5" cy="23.5" r="1.5" fill="#fef08a" stroke="#d97706" strokeWidth="0.75" />
@@ -1046,31 +1046,31 @@ export default function Home() {
 
                 {/* Dashboard Inner Body */}
                 <div
-                  className="relative bg-[rgba(15,10,24,0.94)] backdrop-blur-2xl p-4 sm:p-6 lg:p-7 overflow-hidden"
+                  className="relative bg-[rgba(15,10,24,0.94)] backdrop-blur-2xl p-3.5 sm:p-6 lg:p-7 overflow-hidden w-full max-w-full"
                   style={{ clipPath: EMERALD_CUT_PATH }}
                 >
                   {/* Subtle Grid Background */}
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,#f59e0b08_1px,transparent_1px),linear-gradient(to_bottom,#f59e0b08_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
                   {/* Header Bar */}
-                  <div className="relative z-10 flex flex-wrap items-center justify-between gap-2.5 pb-3.5 sm:pb-5 mb-3.5 sm:mb-5 border-b border-white/10">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                      <span className="ml-1.5 font-mono text-[10px] sm:text-[11px] text-zinc-400 tracking-wider">
+                  <div className="relative z-10 flex flex-wrap items-center justify-between gap-2 pb-3 sm:pb-5 mb-3 sm:mb-5 border-b border-white/10">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-red-500/80 shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+                      <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+                      <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                      <span className="ml-1 font-mono text-[9px] sm:text-[11px] text-zinc-400 tracking-wider">
                         AI_SIMULATOR_v2.4
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[9px] sm:text-[10px]">
+                    <div className="flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[8.5px] sm:text-[10px]">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_6px_#10b981]" />
                       LIVE TELEMETRY
                     </div>
                   </div>
 
                   {/* Interactive Scale Segmented Tabs */}
-                  <div className="relative z-10 mb-3.5 sm:mb-5 p-1 rounded-xl bg-black/50 border border-white/10 flex items-center gap-1">
+                  <div className="relative z-10 mb-3 sm:mb-5 p-1 rounded-xl bg-black/50 border border-white/10 flex items-center gap-1">
                     {(["sme", "growth", "enterprise"] as const).map((scaleKey) => {
                       const isActive = dashboardScale === scaleKey;
                       const preset = dashboardPresets[scaleKey];
@@ -1078,7 +1078,7 @@ export default function Home() {
                         <button
                           key={scaleKey}
                           onClick={() => setDashboardScale(scaleKey)}
-                          className={`flex-1 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-lg text-[10px] sm:text-xs font-mono font-medium transition-all duration-300 relative text-center flex items-center justify-center gap-1 ${
+                          className={`flex-1 py-1.5 sm:py-2 px-1 sm:px-2.5 rounded-lg text-[9.5px] sm:text-xs font-mono font-medium transition-all duration-300 relative text-center flex items-center justify-center gap-1 ${
                             isActive
                               ? "text-black font-bold shadow-[0_0_20px_rgba(245,158,11,0.5)]"
                               : "text-zinc-400 hover:text-zinc-200 hover:bg-white/5"
@@ -1100,7 +1100,7 @@ export default function Home() {
                   </div>
 
                   {/* Dashboard Metrics Grid (2x2 Interactive Emerald Cut Widgets) */}
-                  <div className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3.5 mb-3.5 sm:mb-4">
+                  <div className="relative z-10 grid grid-cols-2 gap-2 sm:gap-3.5 mb-3 sm:mb-4">
                     {dashboardPresets[dashboardScale].metrics.map((metric, idx) => {
                       const isInspected = activeInspector === idx;
                       return (
@@ -1108,7 +1108,7 @@ export default function Home() {
                           key={metric.code}
                           onClick={() => setActiveInspector(idx)}
                           onMouseEnter={() => setActiveInspector(idx)}
-                          className={`p-[1px] relative cursor-pointer transition-all duration-300 ${
+                          className={`p-[1px] relative cursor-pointer transition-all duration-300 min-w-0 ${
                             isInspected
                               ? "bg-gradient-to-br from-amber-400 via-orange-400 to-amber-500 shadow-[0_12px_30px_-8px_rgba(245,158,11,0.45)] scale-[1.02] z-20"
                               : "bg-gradient-to-br from-amber-500/20 via-zinc-800/40 to-purple-900/20 opacity-85 hover:opacity-100 z-10"
@@ -1116,7 +1116,7 @@ export default function Home() {
                           style={{ clipPath: EMERALD_CUT_PATH }}
                         >
                           <div
-                            className={`p-3 sm:p-4 lg:p-5 relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300 min-h-[140px] sm:min-h-[155px] ${
+                            className={`p-2.5 sm:p-4 lg:p-5 relative overflow-hidden h-full flex flex-col justify-between transition-colors duration-300 min-h-[130px] sm:min-h-[155px] ${
                               isInspected
                                 ? "bg-[rgba(24,15,36,0.96)] backdrop-blur-2xl"
                                 : "bg-[rgba(18,12,28,0.92)] backdrop-blur-xl"
@@ -1124,13 +1124,13 @@ export default function Home() {
                             style={{ clipPath: EMERALD_CUT_PATH }}
                           >
                             {/* Sunken Watermark */}
-                            <span className="absolute bottom-1 right-3 sm:right-5 text-3xl sm:text-4xl font-mono font-black text-amber-500/[0.07] pointer-events-none select-none">
+                            <span className="absolute bottom-1 right-2 sm:right-5 text-2xl sm:text-4xl font-mono font-black text-amber-500/[0.07] pointer-events-none select-none">
                               {metric.code}
                             </span>
 
-                            <div className="relative z-10">
-                              <div className="flex items-center justify-between mb-1">
-                                <span className="font-mono text-[8.5px] sm:text-[10px] text-amber-400/90 uppercase tracking-wider truncate pr-1">
+                            <div className="relative z-10 min-w-0">
+                              <div className="flex items-center justify-between mb-1 gap-1">
+                                <span className="font-mono text-[8px] sm:text-[10px] text-amber-400/90 uppercase tracking-wider truncate">
                                   {metric.label}
                                 </span>
                                 {isInspected && (
@@ -1141,32 +1141,32 @@ export default function Home() {
                               <AnimatePresence mode="wait">
                                 <motion.div
                                   key={metric.value + dashboardScale}
-                                  initial={{ opacity: 0, y: 6 }}
+                                  initial={{ opacity: 0, y: 4 }}
                                   animate={{ opacity: 1, y: 0 }}
-                                  exit={{ opacity: 0, y: -6 }}
-                                  transition={{ duration: 0.25 }}
-                                  className="font-mono text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white flex flex-wrap items-baseline gap-1"
+                                  exit={{ opacity: 0, y: -4 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="font-mono text-lg sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white flex flex-wrap items-baseline gap-1"
                                 >
                                   <span className="bg-gradient-to-r from-amber-200 via-orange-300 to-amber-400 bg-clip-text text-transparent">
                                     {metric.value}
                                   </span>
-                                  <span className="text-[9px] sm:text-[10px] font-mono text-emerald-400 font-semibold">
+                                  <span className="text-[8.5px] sm:text-[10px] font-mono text-emerald-400 font-semibold">
                                     {metric.sub}
                                   </span>
                                 </motion.div>
                               </AnimatePresence>
 
-                              <p className="text-[9.5px] sm:text-[11px] text-zinc-400 mt-1.5 sm:mt-2 leading-relaxed line-clamp-2">
+                              <p className="text-[9px] sm:text-[11px] text-zinc-400 mt-1 sm:mt-2 leading-relaxed line-clamp-2">
                                 {metric.desc}
                               </p>
                             </div>
 
                             {/* Mini Reactive Sparkline Waveform */}
-                            <div className="mt-2.5 pt-1.5 border-t border-white/5 flex items-center justify-between">
-                              <span className="text-[8.5px] sm:text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
+                            <div className="mt-2 pt-1 border-t border-white/5 flex items-center justify-between gap-1">
+                              <span className="text-[8px] sm:text-[9px] font-mono text-zinc-500 uppercase tracking-widest truncate">
                                 NODE_{metric.code}
                               </span>
-                              <svg className="w-11 sm:w-14 h-3.5 sm:h-4 overflow-visible" viewBox="0 0 60 16">
+                              <svg className="w-9 sm:w-14 h-3 sm:h-4 overflow-hidden shrink-0" viewBox="0 0 60 16">
                                 <polyline
                                   fill="none"
                                   stroke={isInspected ? "#f59e0b" : "rgba(245,158,11,0.4)"}
@@ -1187,24 +1187,26 @@ export default function Home() {
                   </div>
 
                   {/* Bottom Live Interactive Diagnostic Terminal Bar */}
-                  <div className="relative z-10 p-2.5 sm:p-3.5 rounded-xl bg-black/60 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-xs text-zinc-400">
-                    <div className="flex items-center gap-2 overflow-hidden min-w-0">
-                      <div className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] shrink-0" />
-                      <span className="text-amber-300 font-semibold text-[10px] sm:text-[11px] shrink-0">DIAGNOSTIC:</span>
-                      <AnimatePresence mode="wait">
-                        <motion.span
-                          key={dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
-                          initial={{ opacity: 0, x: 8 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -8 }}
-                          transition={{ duration: 0.2 }}
-                          className="text-zinc-300 text-[10px] sm:text-[11px] truncate"
-                        >
-                          {dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
-                        </motion.span>
-                      </AnimatePresence>
+                  <div className="relative z-10 p-2 sm:p-3 rounded-xl bg-black/60 border border-amber-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 font-mono text-[9.5px] sm:text-xs text-zinc-400 min-w-0 max-w-full">
+                    <div className="flex items-center gap-1.5 sm:gap-2 overflow-hidden min-w-0 flex-1">
+                      <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] shrink-0" />
+                      <span className="text-amber-300 font-semibold text-[9.5px] sm:text-[11px] shrink-0">DIAGNOSTIC:</span>
+                      <div className="min-w-0 flex-1 overflow-hidden">
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
+                            initial={{ opacity: 0, y: 3 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -3 }}
+                            transition={{ duration: 0.15 }}
+                            className="text-zinc-300 text-[9.5px] sm:text-[11px] truncate block"
+                          >
+                            {dashboardPresets[dashboardScale].metrics[activeInspector]?.log}
+                          </motion.span>
+                        </AnimatePresence>
+                      </div>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] text-zinc-500 shrink-0 uppercase tracking-widest hidden md:inline">
+                    <span className="text-[8.5px] sm:text-[10px] text-zinc-500 shrink-0 uppercase tracking-widest hidden md:inline">
                       {dashboardPresets[dashboardScale].badge}
                     </span>
                   </div>

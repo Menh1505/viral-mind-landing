@@ -24,11 +24,14 @@
   html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
     @apply bg-viral-bg text-viral-text font-body;
     overflow-x: hidden;
+    max-width: 100%;
     background-image:
       radial-gradient(circle at 12% 8%, rgba(111, 45, 168, .2), transparent 28rem),
       radial-gradient(circle at 88% 24%, rgba(174, 68, 90, .14), transparent 32rem);
